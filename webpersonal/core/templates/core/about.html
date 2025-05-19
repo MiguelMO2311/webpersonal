@@ -1,12 +1,12 @@
 {% extends 'core/base.html' %}
 
-{% block title %}Acerca de{% endblock %}
+{% block title %}About me{% endblock %}
 
-{% block background %}{% load static %}{% static 'core/img/about-bg.jpg' style="height:calc(-200vh);" %}{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/about-bg.png' %}{% endblock %}
 
 {% block headers %}
-<h1>Acerca de</h1>
-<span class="subheading">Biografía</span>
+<h1>About me</h1>
+<span class="subheading">Biography</span>
 <img class="img-fluid avatar" src="{% static 'core/img/foto.png' %}" alt="" style="width: 150px; height: 200px;">
 {% endblock %}
 {% block content %}
