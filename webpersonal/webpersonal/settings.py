@@ -14,10 +14,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'x-h&qoq4&j#u%+h+$84d_rnx!rbpa#40xnemb7z547!!c1a6xu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+DEBUG = True  # Cambiar a False en producción
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 # Application definition
 
@@ -119,20 +117,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
-
-# Correo
+# Configuración del correo SMTP de la pagina Contact
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
-# Opcional: Ignorar errores de certificado (solo desarrollo)
-try:
-    _create_unverified_https_context = ssl._create_unverified_context
-    ssl._create_default_https_context = _create_unverified_https_context
-except:
-    pass
+EMAIL_USE_TLS = True  # Activar TLS (NO usar SSL)
+EMAIL_USE_SSL = False  # No activar SSL
+EMAIL_HOST_USER = "tu_correo@gmail.com"
+EMAIL_HOST_PASSWORD = "tu_contraseña"  # Usa una contraseña de aplicación si Gmail lo requiere

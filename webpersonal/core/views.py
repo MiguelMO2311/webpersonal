@@ -14,6 +14,7 @@ def about(request):
 def contact(request):
     return render(request, "core/contact.html")
 
+
 def send_email(request):
     if request.method == "POST":
         nombre = request.POST.get("nombre")
@@ -23,18 +24,16 @@ def send_email(request):
         asunto = f"Mensaje de {nombre}"
         cuerpo = f"De: {email}\n\n{mensaje}"
 
-        # Crear contexto SSL confiable
-        ssl_context = ssl.create_default_context(cafile=certifi.where())
-
-        send_mail(
-            asunto,
-            cuerpo,
-            settings.EMAIL_HOST_USER,
-            ["mmeneses73@gmail.com"],
-            fail_silently=False,
-            connection=ssl_context  # Agregar contexto SSL
-        )
-
-        return redirect("contact")
+        try:
+            send_mail(
+                asunto,
+                cuerpo,
+                settings.EMAIL_HOST_USER,
+                ["mmeneses73@gmail.com"],
+                fail_silently=False,  # No hace falta definir conexión aquí
+            )
+            return redirect("contact")
+        except Exception as e:
+            return render(request, "core/contact.html", {"error": f"Error al enviar el correo: {str(e)}"})
 
     return render(request, "core/contact.html")
