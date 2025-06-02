@@ -3,6 +3,10 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 import ssl
 import certifi
+from django.http import JsonResponse
+import os
+
+
 
 # Create your views here.
 def home(request):
@@ -13,6 +17,13 @@ def about(request):
 
 def contact(request):
     return render(request, "core/contact.html")
+
+os.environ["SSL_CERT_FILE"] = certifi.where()
+ssl_context = ssl.create_default_context()
+ssl_context.load_verify_locations(certifi.where())
+
+# Desactivar la verificación de certificados SSL (Solo para pruebas)
+ssl._create_default_https_context = ssl._create_unverified_context
 
 
 def send_email(request):
@@ -30,10 +41,10 @@ def send_email(request):
                 cuerpo,
                 settings.EMAIL_HOST_USER,
                 ["mmeneses73@gmail.com"],
-                fail_silently=False,  # No hace falta definir conexión aquí
+                fail_silently=False,
             )
-            return redirect("contact")
+            return JsonResponse({"success": True, "message": "Correo enviado correctamente."})
         except Exception as e:
-            return render(request, "core/contact.html", {"error": f"Error al enviar el correo: {str(e)}"})
+            return JsonResponse({"success": False, "error": str(e)}, status=500)
 
-    return render(request, "core/contact.html")
+    return JsonResponse({"success": False, "error": "Método no permitido."}, status=400)
