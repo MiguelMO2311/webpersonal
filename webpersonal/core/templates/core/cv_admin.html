@@ -1,0 +1,162 @@
+{% extends 'core/base.html' %}
+
+{% block title %}CV Administrativo{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/about-bg.png' %}{% endblock %}
+
+{% block headers %}
+  <h1>MIGUEL MENESES OLIVEROS</h1>
+  <span class="subheading">Especialista en Asesoría Jurídica Bancaria e Inmobiliaria</span>
+{% endblock %}
+
+{% block content %}
+<style>
+  .cv-section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-bottom: 4px;
+  }
+  .cv-wrapper {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 1100px;
+      margin: 0 auto;
+  }
+  .skill-tag {
+      display: inline-block;
+      background: #e8f4f8;
+      color: #2c3e50;
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      margin: 3px 5px 3px 0;
+  }
+  .cv-list { padding-left: 1.2rem; }
+  .cv-list li { margin-bottom: 0.5rem; }
+  .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: #7f8c8d;
+      font-size: 0.95rem;
+      justify-content: center;
+  }
+  .contact-row a { color: #3498db; }
+</style>
+
+<div class="cv-wrapper">
+  <header class="text-center mb-4">
+    <h2 class="mb-1">Miguel Meneses Oliveros</h2>
+    <p class="text-muted">Especialista en Asesoría Jurídica Bancaria e Inmobiliaria</p>
+    <div class="contact-row mt-3">
+      <span>📍 Leganés, Madrid, España</span>
+      <span>📞 +34 614 218 565</span>
+      <span>✉️ mmeneses73@email.com</span>
+      <span>🔗 <a href="https://www.linkedin.com/in/miguelmeneses73" target="_blank">linkedin.com/in/miguelmeneses73</a></span>
+    </div>
+  </header>
+
+  <h3 class="cv-section-title">Competencias Clave</h3>
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>Jurídico-Legal</strong></p>
+      <div class="skill-tag">Derecho Inmobiliario</div>
+      <div class="skill-tag">Operaciones Hipotecarias</div>
+      <div class="skill-tag">Escrituras Notariales</div>
+      <div class="skill-tag">Registro Propiedad y Mercantil</div>
+      <div class="skill-tag">Cumplimiento Normativo</div>
+
+      <p class="mt-3"><strong>Financiero-Fiscal</strong></p>
+      <div class="skill-tag">Liquidación Impuestos</div>
+      <div class="skill-tag">Transmisiones y Sucesiones</div>
+      <div class="skill-tag">Gestión IRPF y Patrimonio</div>
+      <div class="skill-tag">Dirección Financiera</div>
+      <div class="skill-tag">Presupuestos y Facturación</div>
+    </div>
+    <div class="col-md-6">
+      <p><strong>Tecnológico</strong></p>
+      <div class="skill-tag">Excel y Access con VBA</div>
+      <div class="skill-tag">Power BI / Query / Pivot</div>
+      <div class="skill-tag">SQL</div>
+      <div class="skill-tag">Python</div>
+      <div class="skill-tag">Office 365</div>
+
+      <p class="mt-3"><strong>Gestión</strong></p>
+      <div class="skill-tag">Metodologías Ágiles</div>
+      <div class="skill-tag">Gestión de Proyectos</div>
+      <div class="skill-tag">Protección de Datos</div>
+      <div class="skill-tag">Ciberseguridad</div>
+    </div>
+  </div>
+
+  <h3 class="cv-section-title">Certificaciones</h3>
+  <ul class="cv-list">
+    <li><strong>Power BI Desktop</strong> – Udemy Alumni • 2025</li>
+    <li><strong>Análisis de Datos con Excel</strong> – Grupo Aspasia • 2025</li>
+    <li><strong>Dirección Financiera</strong> – ADAMS Formación • 2024</li>
+    <li><strong>Ciberseguridad</strong> – ILUNION • 2025</li>
+    <li><strong>IA Fundamentals</strong> – IBM Skills Build • 2024</li>
+    <li><strong>Certificación SQL</strong> – IBM Skills Build • 2024</li>
+    <li><strong>Gestión BBDD Nivel 3-4</strong> – FUNDAE • 2025</li>
+  </ul>
+
+  <h3 class="cv-section-title">Idiomas</h3>
+  <ul class="cv-list">
+    <li><strong>Español</strong> – Nativo</li>
+    <li><strong>Inglés</strong> – B1</li>
+  </ul>
+  <h3 class="cv-section-title">Perfil Profesional</h3>
+  <p>
+    Especialista con más de 30 años de experiencia en asesoría jurídica bancaria e inmobiliaria, con sólida formación en gestoría administrativa y cumplimiento normativo. Experto en gestión integral de operaciones hipotecarias, liquidación de impuestos y tramitación de escrituras ante registros públicos y notarías. Demostrada capacidad para liderar procesos de documentación financiera y legal, coordinando eficazmente con promotores inmobiliarios, entidades bancarias y administraciones tributarias. Especializado en protección de datos, análisis financiero mediante Power BI y herramientas avanzadas de Excel, aportando valor estratégico en entornos complejos.
+  </p>
+
+  <h3 class="cv-section-title">Experiencia Profesional</h3>
+  <div class="mb-4">
+    <p><strong>Oficial Técnico Jurídico-Administrativo</strong><br>
+    Gestoría Montero | 1994 - 2024</p>
+    <ul class="cv-list">
+      <li>Asesoría jurídica en operaciones hipotecarias y liquidación fiscal</li>
+      <li>Tramitación de más de 1000 escrituras anuales</li>
+      <li>Coordinación con notarías y registros garantizando cumplimiento normativo</li>
+      <li>Implementación de cuadros de mando y protección de datos</li>
+      <li>Gestión integral de documentación legal y financiera</li>
+    </ul>
+  </div>
+
+  <div class="mb-4">
+    <p><strong>Administrativo</strong><br>
+    IBERINSA (Grupo ACCIONA) | 1989</p>
+    <ul class="cv-list">
+      <li>Gestión administrativa y documentación financiera</li>
+      <li>Soporte documental en procesos internos y auditorías</li>
+    </ul>
+  </div>
+
+  <h3 class="cv-section-title">Formación Académica</h3>
+  <p><strong>Técnico Auxiliar Administrativo y Comercial</strong><br>
+  Luis Vives I.F.P – 1989</p>
+
+  <h3 class="cv-section-title">Logros Destacados</h3>
+  <ul class="cv-list">
+    <li>Reducción del 20% en tiempos de tramitación de escrituras notariales</li>
+    <li>15% de disminución de errores operacionales en asesoría hipotecaria y fiscal</li>
+    <li>Implementación de sistemas de control financiero que mejoraron la eficiencia un 10%</li>
+    <li>100% de cumplimiento normativo sostenido</li>
+    <li>Gestión de más de 30.000 escrituras notariales durante su carrera</li>
+  </ul>
+
+  <h3 class="cv-section-title">Servicios Especializados</h3>
+  <ul class="cv-list">
+    <li>Consultoría financiera y legal inmobiliaria</li>
+    <li>Gestión integral de operaciones hipotecarias</li>
+    <li>Tramitación de escrituras y su inscripción en registros públicos</li>
+    <li>Asesoramiento en derecho inmobiliario y fiscal</li>
+    <li>Análisis financiero y business intelligence</li>
+  </ul>
+</div>
+{% endblock %}

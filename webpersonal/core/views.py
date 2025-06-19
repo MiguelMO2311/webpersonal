@@ -7,7 +7,6 @@ from django.http import JsonResponse
 import os
 
 
-
 # Create your views here.
 def home(request):
     return render(request, "core/home.html")
@@ -17,6 +16,9 @@ def about(request):
 
 def contact(request):
     return render(request, "core/contact.html")
+
+def mi_vista_admin_cv(request):
+    return render(request, 'core/cv_admin.html')
 
 os.environ["SSL_CERT_FILE"] = certifi.where()
 ssl_context = ssl.create_default_context()
