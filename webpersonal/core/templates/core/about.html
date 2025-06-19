@@ -12,9 +12,20 @@
 {% block content %}
 {% comment %} <div class="row">  {% endcomment %}
     <div class="col-lg-12 col-md-12">
-       <h2 class="section-heading">Miguel Meneses.<span class="subheading" style="color:grey; font-size: 18px;"> Nacido el 23 de Noviembre de 1973, en Madrid (España).</span>
-        </h2>
-        <p>
+    <h2 class="section-heading" style="
+  background: linear-gradient(to right, #c0c0c0, #dfe3e6, #c0c0c0);
+  color: #202020;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  text-shadow: 1px 1px 2px #ffffff;
+">
+  Miguel Meneses.
+  <span class="subheading" style="color: #444; font-size: 18px; margin-left: 10px;">
+    Nacido el 23 de Noviembre de 1973, en Madrid (España).
+  </span>
+    </h2>
+     <p>
         - <span style="color: gold;font-weight: bold;">Legal Advisor en Real Estate.</span>
         Con más de 30 años de experiencia en el ámbito jurídico, financiero, administrativo e inmobiliario, Miguel Meneses Oliveros se ha consolidado como un asesor experto en la estructuración y gestión de operaciones de alto valor...
         <a href="{% url 'cv_admin' %}" class="btn d-inline-flex align-items-center px-3 py-2" style="
@@ -26,12 +37,26 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         "
         onmouseover="this.style.backgroundColor='gold'; this.style.color='black'"
-        onmouseout="this.style.backgroundColor='black'; this.style.color='white'">
+        onmouseout="this.style.backgroundColor='yelow'; this.style.color='white'">
         <i class="fa fa-search mr-2"></i>
         CV Administrativo
         </a>
         </p>
 
-        <p >-  <span style="color: blue;font-weight: bold;">Full Stack Developer & Tech Specialist.</span> En el ámbito tecnológico, distinguido como un Full Stack Developer con una sólida especialización en ciberseguridad, inteligencia artificial y arquitecturas escalables. Su dominio de tecnologías como Angular, React, Node.js, Python, JS, TypeScript, Htlm, Css y bases de datos SQL/NoSQL le permite desarrollar soluciones digitales robustas y eficientes, optimizando la experiencia del usuario y la funcionalidad empresarial. Con un enfoque orientado a la seguridad y la innovación, ha participado en proyectos que integran análisis de datos avanzados, desarrollo seguro de software y automatización inteligente. Su expertise en metodologías ágiles (Scrum, Kanban) y en DevOps le permite liderar iniciativas tecnológicas con una visión integral, asegurando la escalabilidad y sostenibilidad de los sistemas en un entorno digital dinámico y competitivo.</p>
+        <p >-  <span style="color: blue;font-weight: bold;">Full Stack Developer & Tech Specialist.</span> En el ámbito tecnológico, distinguido como un Full Stack Developer con una sólida especialización en ciberseguridad, inteligencia artificial y arquitecturas escalables. Su dominio de tecnologías como Angular, React, Node.js, Python, JS, TypeScript, Htlm, Css y bases de datos SQL/NoSQL le permite desarrollar soluciones digitales robustas y eficientes, optimizando la experiencia del usuario y la funcionalidad empresarial. Con un enfoque orientado a la seguridad y la innovación, ha participado en proyectos que integran análisis de datos avanzados, desarrollo seguro de software y automatización inteligente. Su expertise en metodologías ágiles (Scrum, Kanban) y en DevOps le permite liderar iniciativas tecnológicas con una visión integral, asegurando la escalabilidad y sostenibilidad de los sistemas en un entorno digital dinámico y competitivo.
+        <a href="{% url 'cv_fsd' %}" class="btn d-inline-flex align-items-center px-3 py-2" style="
+            background-color: #000;
+            color: white;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        "
+        onmouseover="this.style.backgroundColor='blue'; this.style.color='black'"
+        onmouseout="this.style.backgroundColor='violet'; this.style.color='white'">
+        <i class="fa fa-search mr-2"></i>
+        CV Full Stack Develloper
+        </a>
+    </p>
     </div>
 {% endblock %}

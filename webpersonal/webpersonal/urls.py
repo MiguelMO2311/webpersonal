@@ -15,6 +15,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("contact/send_email/", core_views.send_email, name="send_email"),
     path('admin-cv/', core_views.mi_vista_admin_cv, name='cv_admin'),
+    path('fsd-cv/', core_views.mi_vista_fsd_cv, name='cv_fsd'),
 ]
 
 

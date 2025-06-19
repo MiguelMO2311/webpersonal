@@ -1,0 +1,155 @@
+{% extends 'core/base.html' %}
+
+{% block title %}CV Full Stack Developer{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/about-bg.png' %}{% endblock %}
+
+{% block headers %}
+  <hr>
+  <h1>Miguel Meneses</h1>
+  <span class="subheading text-dark">Full Stack Developer · Ciberseguridad · IA</span>
+ <span class="subheading text-primary">"Curriculum Vitae"</span>
+
+{% endblock %}
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<style>
+  body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* degradado oscuro azul petróleo */
+  }
+
+  .cv-wrapper {
+    background: #ffffff;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 0 5px #1e3c52, 0 0 40px rgba(80, 212, 255, 0.25);
+    max-width: 1150px;
+    margin: 2rem auto;
+    border: 1px solid #55b5f2;
+  }
+
+  .cv-section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #202d3d;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 4px;
+    border-bottom: 3px solid #55b5f2; /* azul eléctrico */
+  }
+
+  .material-symbols-outlined {
+    font-size: 1.1rem;
+    color: #55b5f2;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  .skill-tag {
+    display: inline-block;
+    background: #ecfaff;
+    color: #2c3e50;
+    padding: 5px 11px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    margin: 3px 6px 3px 0;
+    transition: all 0.3s ease;
+  }
+
+  .skill-tag:hover {
+    background-color: #55b5f2;
+    color: #fff;
+  }
+
+  .contact-row a {
+    color: #55b5f2;
+  }
+</style>
+
+<div class="cv-wrapper">
+  <!-- Cabecera -->
+  <header class="text-center mb-5">
+    <h2>Miguel Meneses Oliveros</h2>
+    <p class="text-muted mb-2">Full Stack Developer | Especialista en Front-End, Back-End, Ciberseguridad e Inteligencia Artificial</p>
+    <div class="contact-row">
+      <span>📍 Leganés, Comunidad de Madrid</span>
+      <span>📞 +34 614 218 565</span>
+      <span>✉️ mmeneses73@gmail.com</span>
+      <span>🔗 <a href="https://linkedin.com/in/miguel-men-oli" target="_blank">LinkedIn</a></span>
+    </div>
+  </header>
+
+  <div class="row">
+    <!-- Columna izquierda -->
+    <aside class="col-md-4">
+      <h3 class="cv-section-title"><span class="material-symbols-outlined">code</span> Habilidades Técnicas</h3>
+      <p><strong>Front-End</strong></p>
+      <div class="skill-tag">HTML5</div><div class="skill-tag">CSS3</div><div class="skill-tag">TailwindCSS</div><div class="skill-tag">Bootstrap</div>
+      <div class="skill-tag">JavaScript</div><div class="skill-tag">TypeScript</div><div class="skill-tag">Angular17</div><div class="skill-tag">React6</div><div class="skill-tag">Next.js</div><div class="skill-tag">Vite</div>
+
+      <p class="mt-3"><strong>Back-End</strong></p>
+      <div class="skill-tag">Node.js</div><div class="skill-tag">Express.js</div><div class="skill-tag">Python</div><div class="skill-tag">Django</div>
+
+      <p class="mt-3"><strong>Bases de Datos</strong></p>
+      <div class="skill-tag">MySQL</div><div class="skill-tag">PostgreSQL</div><div class="skill-tag">MongoDB</div><div class="skill-tag">Cassandra</div>
+      <div class="skill-tag">Redis</div><div class="skill-tag">SQL Server</div>
+
+      <p class="mt-3"><strong>DevOps y Herramientas</strong></p>
+      <div class="skill-tag">Git</div><div class="skill-tag">GitHub</div><div class="skill-tag">Postman</div><div class="skill-tag">KanbanFlow</div><div class="skill-tag">APIs</div><div class="skill-tag">Azure</div><div class="skill-tag">Linux</div>
+
+      <p class="mt-3"><strong>Otros</strong></p>
+      <div class="skill-tag">WordPress</div><div class="skill-tag">Unity 2D/3D</div><div class="skill-tag">Power BI</div><div class="skill-tag">React Native</div>
+      <div class="skill-tag">Hacking Ético</div><div class="skill-tag">SEO/SEM</div><div class="skill-tag">TDD/BDD</div>
+
+      <h3 class="cv-section-title"><span class="material-symbols-outlined">psychology</span> Aptitudes Clave</h3>
+      <ul class="cv-list">
+        <li>Resolución de problemas complejos</li>
+        <li>Trabajo en equipo y Agile (Scrum, Kanban)</li>
+        <li>Adaptación a nuevas tecnologías</li>
+        <li>Desarrollo seguro de software</li>
+        <li>Comunicación efectiva</li>
+      </ul>
+    </aside>
+    <!-- Columna derecha -->
+    <section class="col-md-8">
+      <h3 class="cv-section-title"><span class="material-symbols-outlined">badge</span> Perfil Profesional</h3>
+      <p>
+        Desarrollador Full Stack con experiencia en el diseño y desarrollo de aplicaciones web dinámicas, seguras y escalables. Especializado en tecnologías Front-End y Back-End, con un enfoque en ciberseguridad, hacking ético y análisis de datos mediante Inteligencia Artificial. Competente en metodologías ágiles (Scrum, Kanban), resolución de problemas complejos y aprendizaje rápido de nuevas tecnologías. Mi objetivo es contribuir al éxito de equipos multidisciplinares mediante soluciones tecnológicas innovadoras y de alto impacto.
+      </p>
+
+      <h3 class="cv-section-title"><span class="material-symbols-outlined">lightbulb</span> Proyectos Destacados</h3>
+      <ul class="cv-list">
+        <li><strong>BookStore:</strong> Plataforma de gestión de libros con APIs externas (React, TypeScript, MongoDB, HTML/CSS)</li>
+        <li><strong>XperGG:</strong> Red social multimedia para gamers con autenticación y contenido multimedia (React, Node.js, APIs externas)</li>
+      </ul>
+
+      <h3 class="cv-section-title"><span class="material-symbols-outlined">school</span> Educación y Formación</h3>
+      <ul class="cv-list">
+        <li><strong>Bootcamp Full Stack Developer</strong> – Codenotch (Oct 2023 – May 2024)</li>
+        <li><strong>Introducción al Hacking Ético y Seguridad</strong> – CEIM (Abr – May 2024) · Nota: 9.10</li>
+        <li><strong>Creación de Blogs con WordPress</strong> – CEIM (Abr – May 2024) · Nota: 9.50</li>
+        <li><strong>Cloud Computing: Azure & Linux</strong> – ADAMS (Mar – Abr 2024) · Nota: 9.67</li>
+        <li><strong>Análisis en Código BDD / TDD</strong> – Eductrade (Mar 2024) · Nota: 10</li>
+        <li><strong>Programación de Dispositivos Móviles</strong> – EIE (Abr – Jul 2024)</li>
+        <li><strong>Gestión BBDD Nivel 4</strong> – FUNDAE (Dic 2024 – Feb 2025)</li>
+        <li><strong>Unity 2D/3D Game Dev</strong> – IMPULSO 06 (Feb – Mar 2025)</li>
+        <li><strong>Python Avanzado + Django</strong> – Bejob & IBM SkillsBuild (Ene – Mar 2025)</li>
+        <li><strong>Excel y Power BI</strong> – Grupo Aspasia (Ene – Mar 2025)</li>
+        <li><strong>Power BI Desktop</strong> – Udemy (Mar – Abr 2025)</li>
+        <li><strong>IA & ChatGPT Avanzado</strong> – Universidad Nebrija (Feb – Mar 2025)</li>
+        <li><strong>Digitalización Profesional</strong> – Confederación de Centros de Educación (Nov 2024 – Ene 2025)</li>
+        <li><strong>Dirección Financiera</strong> – ADAMS Formación (Feb – Mar 2025)</li>
+      </ul>
+
+      <h3 class="cv-section-title"><span class="material-symbols-outlined">workspace_premium</span> Certificaciones</h3>
+      <ul class="cv-list">
+        <li>Artificial Intelligence Fundamentals (IBM SkillsBuild · 2024)</li>
+        <li>Cloud Computing: Azure y Linux (ADAMS · 2024)</li>
+        <li>Análisis BDD y TDD (Eductrade · 2024)</li>
+        <li>Python Avanzado con Django (Bejob & IBM · 2025)</li>
+        <li>Sistemas de Gestión de Bases de Datos Nivel 4 (FUNDAE · 2025)</li>
+      </ul>
+    </section>
+  </div> <!-- Fin row -->
+</div> <!-- Fin wrapper -->
+{% endblock %}

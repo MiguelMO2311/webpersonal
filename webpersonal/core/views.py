@@ -20,6 +20,9 @@ def contact(request):
 def mi_vista_admin_cv(request):
     return render(request, 'core/cv_admin.html')
 
+def mi_vista_fsd_cv(request):
+    return render(request, 'core/cv_fsd.html')
+
 os.environ["SSL_CERT_FILE"] = certifi.where()
 ssl_context = ssl.create_default_context()
 ssl_context.load_verify_locations(certifi.where())
