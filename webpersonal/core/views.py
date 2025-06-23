@@ -1,13 +1,16 @@
-from django.core.mail import send_mail
-from django.shortcuts import render, redirect
-from django.conf import settings
+import os
 import ssl
 import certifi
+
+from django.conf import settings
+from django.core.mail import send_mail
 from django.http import JsonResponse
-import os
+from django.shortcuts import render, redirect
+
+from portfolio.models import Project, Diploma
 
 
-# Create your views here.
+# Vistas estándar
 def home(request):
     return render(request, "core/home.html")
 
@@ -23,14 +26,22 @@ def mi_vista_admin_cv(request):
 def mi_vista_fsd_cv(request):
     return render(request, 'core/cv_fsd.html')
 
+# Vista para el portfolio con proyectos y diplomas
+def portfolio(request):
+    projects = Project.objects.all()
+    diplomas = Diploma.objects.all()
+    return render(request, "core/portfolio.html", {
+        "projects": projects,
+        "diplomas": diplomas,
+    })
+
+# Configuración SSL (desactivación temporal para pruebas)
 os.environ["SSL_CERT_FILE"] = certifi.where()
 ssl_context = ssl.create_default_context()
 ssl_context.load_verify_locations(certifi.where())
-
-# Desactivar la verificación de certificados SSL (Solo para pruebas)
 ssl._create_default_https_context = ssl._create_unverified_context
 
-
+# Envío de correo
 def send_email(request):
     if request.method == "POST":
         nombre = request.POST.get("nombre")
