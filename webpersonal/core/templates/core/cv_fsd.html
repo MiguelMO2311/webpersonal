@@ -5,71 +5,109 @@
 
 {% block headers %}
   <hr>
-  <h1>Miguel Meneses</h1>
-  <span class="subheading text-dark">Full Stack Developer · Ciberseguridad · IA</span>
- <span class="subheading text-primary">"Curriculum Vitae"</span>
-
+  <h1 style="color: #4dc6e0;">Miguel Meneses</h1>
+  <span class="subheading text-light">Full Stack Developer · Ciberseguridad · IA</span>
+  <span class="subheading" style="color: red;">"Curriculum Vitae"</span>
 {% endblock %}
 
 {% block content %}
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 <style>
   body {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* degradado oscuro azul petróleo */
+    background: linear-gradient(135deg, #0f1c24, #162b34, #1d3a44);
+    color: #f2f6f8;
   }
 
   .cv-wrapper {
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.03);
     padding: 2rem 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 0 0 5px #1e3c52, 0 0 40px rgba(80, 212, 255, 0.25);
+    box-shadow: 0 0 0 4px rgba(80, 212, 255, 0.25), 0 0 40px rgba(80, 212, 255, 0.2);
     max-width: 1150px;
     margin: 2rem auto;
-    border: 1px solid #55b5f2;
+    border: 1px solid rgba(80, 212, 255, 0.3);
+    backdrop-filter: blur(6px);
   }
 
   .cv-section-title {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #202d3d;
+    color: #66defc;
     margin-top: 2rem;
     margin-bottom: 1rem;
     padding-bottom: 4px;
-    border-bottom: 3px solid #55b5f2; /* azul eléctrico */
+    border-bottom: 2px solid #66defc;
   }
 
   .material-symbols-outlined {
     font-size: 1.1rem;
-    color: #55b5f2;
+    color: #66defc;
     margin-right: 6px;
     vertical-align: middle;
   }
 
   .skill-tag {
     display: inline-block;
-    background: #ecfaff;
-    color: #2c3e50;
+    background: rgba(80, 212, 255, 0.15);
+    color: #d2eef9;
     padding: 5px 11px;
     border-radius: 15px;
     font-size: 0.85rem;
     margin: 3px 6px 3px 0;
     transition: all 0.3s ease;
+    border: 1px solid rgba(80, 212, 255, 0.3);
   }
 
   .skill-tag:hover {
-    background-color: #55b5f2;
+    background-color: #4dc6e0;
     color: #fff;
   }
 
+  .contact-row span {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 0.95rem;
+  }
+
   .contact-row a {
-    color: #55b5f2;
+    color: #aeeaff;
+    text-decoration: underline;
+  }
+
+  .contact-row a:hover {
+    color: #66defc;
+  }
+
+  .text-muted {
+    color: #ccdce3 !important;
+  }
+
+  ul.cv-list {
+    padding-left: 1.2rem;
+  }
+
+  ul.cv-list li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  strong {
+    color: #e0f8ff;
+  }
+
+  @media (max-width: 768px) {
+    .cv-wrapper {
+      padding: 1rem;
+    }
+    .skill-tag {
+      font-size: 0.75rem;
+    }
   }
 </style>
 
 <div class="cv-wrapper">
-  <!-- Cabecera -->
   <header class="text-center mb-5">
-    <h2>Miguel Meneses Oliveros</h2>
+    <h2 style="color: #4dc6e0;">Miguel Meneses Oliveros</h2>
     <p class="text-muted mb-2">Full Stack Developer | Especialista en Front-End, Back-End, Ciberseguridad e Inteligencia Artificial</p>
     <div class="contact-row">
       <span>📍 Leganés, Comunidad de Madrid</span>
@@ -80,7 +118,6 @@
   </header>
 
   <div class="row">
-    <!-- Columna izquierda -->
     <aside class="col-md-4">
       <h3 class="cv-section-title"><span class="material-symbols-outlined">code</span> Habilidades Técnicas</h3>
       <p><strong>Front-End</strong></p>
@@ -110,7 +147,7 @@
         <li>Comunicación efectiva</li>
       </ul>
     </aside>
-    <!-- Columna derecha -->
+
     <section class="col-md-8">
       <h3 class="cv-section-title"><span class="material-symbols-outlined">badge</span> Perfil Profesional</h3>
       <p>
@@ -122,7 +159,6 @@
         <li><strong>BookStore:</strong> Plataforma de gestión de libros con APIs externas (React, TypeScript, MongoDB, HTML/CSS)</li>
         <li><strong>XperGG:</strong> Red social multimedia para gamers con autenticación y contenido multimedia (React, Node.js, APIs externas)</li>
       </ul>
-
       <h3 class="cv-section-title"><span class="material-symbols-outlined">school</span> Educación y Formación</h3>
       <ul class="cv-list">
         <li><strong>Bootcamp Full Stack Developer</strong> – Codenotch (Oct 2023 – May 2024)</li>
@@ -150,6 +186,6 @@
         <li>Sistemas de Gestión de Bases de Datos Nivel 4 (FUNDAE · 2025)</li>
       </ul>
     </section>
-  </div> <!-- Fin row -->
-</div> <!-- Fin wrapper -->
+  </div>
+</div>
 {% endblock %}

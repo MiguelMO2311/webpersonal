@@ -6,31 +6,62 @@
 
 {% block headers %}
   <h1>Portfolio</h1>
-  <span class="subheading">Proyectos y Certificaciones</span>
+  <span class="subheading text-bg-success">Projects, Degrees and Certifications</span>
 {% endblock %}
 
 {% block content %}
+<style>
+  .hover-zoom-container {
+    transition: transform 0.4s ease;
+    display: inline-block;
+    overflow: visible;
+    max-width: 100%;
+  }
+
+  .hover-zoom-container:hover {
+    transform: scale(2);
+    z-index: 999;
+    position: relative;
+  }
+
+  @media (max-width: 768px) {
+    .hover-zoom-container:hover {
+      transform: none;
+    }
+  }
+
+  /* NUEVO: mostrar solo hasta 5 líneas y truncar el resto */
+  .carousel-item .col-md-7 p {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* NUEVO: alinear filas verticalmente arriba */
+  .carousel-item .row {
+    align-items: flex-start;
+  }
+</style>
+
 <div class="container-fluid">
   <div class="portfolio-layout">
     
-    <!-- Proyectos - Carrusel Superior (movimiento hacia la izquierda) -->
+    <!-- Proyectos - Carrusel Superior -->
     <div class="carousel-section carousel-left bg-bone rounded shadow-sm">
       <h2 class="h4 text-center text-dark">
         <i class="fa fa-code" style="color: #b89d89;"></i> Proyectos
       </h2>
       <div class="carousel-container">
         <div id="projectCarousel" class="carousel slide h-100 w-100" data-bs-ride="carousel" data-bs-interval="5000">
-          <!-- Contenido del carrusel -->
           <div class="carousel-inner h-100">
             {% for project in projects %}
             <div class="carousel-item h-100 {% if forloop.first %}active{% endif %}">
-              <div class="row h-100 align-items-center">
+              <div class="row h-100">
                 <div class="col-md-5 text-center">
-                  <div class="position-relative">
+                  <div class="hover-zoom-container">
                     <img src="{{ project.image.url }}" class="img-fluid rounded shadow" alt="{{ project.title }}">
-                    <div class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1 rounded-end" style="font-size: 0.75rem;">
-                      Proyecto {{ forloop.counter }}
-                    </div>
                   </div>
                 </div>
                 <div class="col-md-7 ps-md-4">
@@ -51,38 +82,24 @@
             </div>
             {% endfor %}
           </div>
-          
-          <!-- Controles -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-          </button>
         </div>
       </div>
     </div>
 
-    <!-- Diplomas - Carrusel Inferior (movimiento hacia la derecha) -->
+    <!-- Diplomas - Carrusel Inferior -->
     <div class="carousel-section carousel-right bg-leather rounded shadow-sm">
       <h2 class="h4 text-center">
         <i class="fa fa-graduation-cap" style="color: #fef1e7;"></i> Diplomas y Certificaciones
       </h2>
       <div class="carousel-container">
         <div id="diplomaCarousel" class="carousel slide h-100 w-100" data-bs-ride="carousel" data-bs-interval="5000">
-          <!-- Contenido del carrusel -->
           <div class="carousel-inner h-100">
             {% for diploma in diplomas %}
             <div class="carousel-item h-100 {% if forloop.first %}active{% endif %}">
-              <div class="row h-100 align-items-center">
+              <div class="row h-100">
                 <div class="col-md-5 text-center">
-                  <div class="position-relative">
+                  <div class="hover-zoom-container">
                     <img src="{{ diploma.image.url }}" class="img-fluid rounded shadow" alt="{{ diploma.title }}">
-                    <div class="position-absolute top-0 start-0 bg-warning text-dark px-2 py-1 rounded-end" style="font-size: 0.75rem;">
-                      Certificación {{ forloop.counter }}
-                    </div>
                   </div>
                 </div>
                 <div class="col-md-7 ps-md-4">
@@ -106,16 +123,6 @@
             </div>
             {% endfor %}
           </div>
-          
-          <!-- Controles -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#diplomaCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#diplomaCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-          </button>
         </div>
       </div>
     </div>
@@ -127,96 +134,36 @@
 {% block extra_js %}
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    // Configuración del carrusel de proyectos (movimiento hacia la izquierda)
     const projectCarousel = document.querySelector('#projectCarousel');
-    if (projectCarousel) {
-      const projectCarouselInstance = new bootstrap.Carousel(projectCarousel, {
-        interval: 5000, // 5 segundos
-        ride: 'carousel',
-        pause: 'hover',
-        wrap: true
-      });
-    }
-
-    // Configuración del carrusel de diplomas (movimiento hacia la derecha)
     const diplomaCarousel = document.querySelector('#diplomaCarousel');
-    if (diplomaCarousel) {
-      const diplomaCarouselInstance = new bootstrap.Carousel(diplomaCarousel, {
-        interval: 5000, // 5 segundos
+
+    if (projectCarousel) {
+      new bootstrap.Carousel(projectCarousel, {
+        interval: 5000,
         ride: 'carousel',
         pause: 'hover',
         wrap: true
       });
     }
 
-    // Función para sincronizar movimientos opuestos
-    function setupOppositeMovement() {
-      let projectDirection = 1; // 1 = next, -1 = prev
-      let diplomaDirection = -1; // Opuesto al de proyectos
-      
-      // Cambiar dirección automáticamente cada 5 segundos
-      setInterval(() => {
-        if (projectCarousel && diplomaCarousel) {
-          const projectInstance = bootstrap.Carousel.getInstance(projectCarousel);
-          const diplomaInstance = bootstrap.Carousel.getInstance(diplocaCarousel);
-          
-          // Mover carrusel de proyectos hacia la izquierda (prev)
-          if (projectInstance) {
-            projectInstance.prev();
-          }
-          
-          // Mover carrusel de diplomas hacia la derecha (next)
-          if (diplomaInstance) {
-            diplomaInstance.next();
-          }
-        }
-      }, 5000);
-    }
-
-    // Inicializar movimientos opuestos
-    setupOppositeMovement();
-
-    // Función para pausar/reanudar animaciones en hover
-    function setupHoverEffects() {
-      const carouselSections = document.querySelectorAll('.carousel-section');
-      
-      carouselSections.forEach(section => {
-        section.addEventListener('mouseenter', function() {
-          const carouselInner = this.querySelector('.carousel-inner');
-          if (carouselInner) {
-            carouselInner.style.animationPlayState = 'paused';
-          }
-        });
-        
-        section.addEventListener('mouseleave', function() {
-          const carouselInner = this.querySelector('.carousel-inner');
-          if (carouselInner) {
-            carouselInner.style.animationPlayState = 'running';
-          }
-        });
+    if (diplomaCarousel) {
+      new bootstrap.Carousel(diplomaCarousel, {
+        interval: 2000,
+        ride: 'carousel',
+        pause: 'hover',
+        wrap: true
       });
     }
 
-    // Inicializar efectos hover
-    setupHoverEffects();
-
-    // Añadir efectos de entrada suaves
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    });
-
-    // Observar las secciones de carrusel para animaciones de entrada
-    document.querySelectorAll('.carousel-section').forEach(section => {
-      section.style.opacity = '0';
-      section.style.transform = 'translateY(20px)';
-      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(section);
-    });
+    // Movimiento sincronizado
+    setInterval(() => {
+      const pc = bootstrap.Carousel.getInstance(projectCarousel);
+      const dc = bootstrap.Carousel.getInstance(diplomaCarousel);
+      if (pc && dc) {
+        pc.prev();
+        dc.next();
+      }
+    }, 4000);
   });
 </script>
 {% endblock %}

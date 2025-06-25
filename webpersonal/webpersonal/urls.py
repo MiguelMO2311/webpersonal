@@ -7,6 +7,7 @@ from portfolio import views as portfolio_views
 from core.views import home, send_email
 
 
+
 urlpatterns = [
     path('', core_views.home, name="home"),
     path('about-me/', core_views.about, name="about"),

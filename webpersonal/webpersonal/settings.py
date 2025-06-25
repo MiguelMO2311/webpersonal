@@ -1,17 +1,14 @@
 import os
 from pathlib import Path
 import ssl
+import certifi  # ✅ Para usar certificados raíz verificados
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'x-h&qoq4&j#u%+h+$84d_rnx!rbpa#40xnemb7z547!!c1a6xu'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True  # Cambiar a False en producción
 ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
@@ -58,7 +55,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'webpersonal.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -67,7 +63,6 @@ DATABASES = {
 }
 
 # Password validation
-# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -84,15 +79,13 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
-# https://docs.djangoproject.com/en/3.1/topics/i18n/
 LANGUAGE_CODE = 'es'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
+# Static files
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "core/static"]
 
@@ -100,16 +93,28 @@ STATICFILES_DIRS = [BASE_DIR / "core/static"]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-# Configuración del correo SMTP de la página Contact
+# ========================================
+# 📧 CONFIGURACIÓN DE EMAIL CON GMAIL
+# ========================================
+
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True  # Activar TLS (NO usar SSL)
-EMAIL_USE_SSL = False  # No activar SSL
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "default@example.com")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "default_password")
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 
-EMAIL_SSL_CONTEXT = ssl._create_unverified_context()
+# Reemplaza estas variables o usa .env
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "mmeneses73@gmail.com")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "Quejigos2311")
+# EMAIL_HOST_USER = "mmeneses73@gmail.com"
+# EMAIL_HOST_PASSWORD = "Quejigos2307"
 
-# Llave primaria
+
+# ✅ Contexto seguro usando certifi
+EMAIL_SSL_CONTEXT = ssl.create_default_context(cafile=certifi.where())
+
+# ========================================
+
+# Clave primaria por defecto
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
