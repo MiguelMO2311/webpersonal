@@ -1,104 +1,18 @@
 {% extends 'core/base.html' %}
 
+
 {% block title %}About me{% endblock %}
 
 {% block background %}{% load static %}{% static 'core/img/about-bg.png' %}{% endblock %}
 
 {% block headers %}
-<img class="img-fluid avatar" src="{% static 'core/img/foto.png'%}" alt="" style="width: 150px; height: 200px;">
+
+<img class="img-fluid avatar" src="{% static 'core/img/foto.png'%}" alt="" style="width: 75px; height: 100px;">
 <h1>About me</h1>
 <span class="subheading">Biography</span>
 {% endblock %}
 
 {% block content %}
-<style>
-  .section-heading {
-    background: linear-gradient(to right, #2c2c2c, #3a3a3a);
-    color: #f8f8f0;
-    padding: 15px 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.1);
-  }
-
-  .block-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 25px;
-    flex-wrap: wrap;
-  }
-
-  .profile-block {
-    background: linear-gradient(to bottom right, #2c2c2c, #b4b4b4);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 10px;
-    padding: 20px;
-    color: #f8f8f0;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-    flex: 1;
-    min-height: 580px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .profile-block p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    text-align: justify;
-  }
-
-  .block-title {
-    color: #c4a35a;
-    font-weight: bold;
-    font-size: 1rem;
-  }
-
-  .cv-button {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    padding: 12px 20px;
-    font-weight: bold;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-bottom: 12px;
-    transition: all 0.3s ease;
-  }
-
-  .cv-button.admin {
-    background: linear-gradient(to right, #b58b39, #f0e6c0);
-    color: #2c2c2c;
-    border: 1px solid #b58b39;
-  }
-
-  .cv-button.admin:hover {
-    background: #a0772f;
-    color: white;
-  }
-
-  .cv-button.fsd {
-    background: linear-gradient(to right, #5e5e5e, #c0c0c0);
-    color: #0f0f0f;
-    border: 1px solid #b4b4b4;
-  }
-
-  .cv-button.fsd:hover {
-    background: #444;
-    color: white;
-  }
-
-  @media (max-width: 768px) {
-    .block-container {
-      flex-direction: column;
-    }
-
-    .profile-block {
-      width: 100%;
-    }
-  }
-</style>
 
 <div class="col-lg-12 col-md-12">
   <h2 class="section-heading">
@@ -113,17 +27,25 @@
     <div class="profile-block">
       <a href="{% url 'cv_admin' %}" class="cv-button admin">Ver CV Administrativo</a>
       <p>
-        - <span class="block-title">Especialista en Asesoría Jurídica Bancaria, Inmobiliaria y Gestión Administrativa.</span> Con más de tres décadas de experiencia, ha liderado operaciones jurídicas y financieras en el entorno bancario e inmobiliario, combinando conocimiento técnico y visión estratégica. Su dominio en gestoría administrativa, cumplimiento normativo y protección de datos lo posiciona como un referente en entornos regulados. Destaca su capacidad para gestionar procesos hipotecarios, liquidación de tributos, coordinación de firmas notariales y trámites ante registros públicos, así como la comunicación directa con promotores, entidades financieras y administraciones públicas. Posee formación en análisis financiero, reporting y control documental usando herramientas como Excel avanzado, Power BI y bases jurídicas. A lo largo de su trayectoria ha implementado soluciones prácticas a incidencias registrales y ha asesorado en procesos de regularización de activos complejos. Su perfil destaca por la precisión en la gestión, la excelencia organizativa y un enfoque resolutivo que aporta garantías y confianza en entornos altamente regulados.
+        - <span class="block-title">Especializado en Asesoría Jurídica Bancaria, Inmobiliaria y Gestión Administrativa.</span> Con más de tres décadas de experiencia, ha liderado operaciones jurídicas y financieras en el entorno bancario e inmobiliario, combinando conocimiento técnico y visión estratégica. Su dominio en gestoría administrativa, cumplimiento normativo y protección de datos lo posiciona como un referente en entornos regulados. Destaca su capacidad para gestionar procesos hipotecarios, liquidación de tributos, coordinación de firmas notariales y trámites ante registros públicos, así como la comunicación directa con promotores, entidades financieras y administraciones públicas. Posee formación en análisis financiero, reporting y control documental usando herramientas como Excel avanzado, Power BI y bases jurídicas. A lo largo de su trayectoria ha implementado soluciones prácticas a incidencias registrales y ha asesorado en procesos de regularización de activos complejos. Su perfil destaca por la precisión en la gestión, la excelencia organizativa y un enfoque resolutivo que aporta garantías y confianza en entornos altamente regulados.
       </p>
     </div>
 
     <div class="profile-block">
       <a href="{% url 'cv_fsd' %}" class="cv-button fsd">Ver CV Full Stack Developer</a>
       <p>
-  - <span class="block-title">Full Stack Developer & Especialista en Inteligencia Artificial y Ciberseguridad.</span> Ingeniero con enfoque integral en desarrollo web y tecnologías emergentes, combina experiencia en Front-End y Back-End con visión estratégica en automatización, arquitectura e infraestructura digital. Maneja con fluidez entornos como Angular, React, Node.js, Python, TypeScript y bases SQL/NoSQL, aportando soluciones robustas, intuitivas y seguras. Ha diseñado plataformas inteligentes aplicando modelos de aprendizaje automático, NLP y analítica avanzada, integrando IA en sistemas empresariales y de gestión. Domina metodologías ágiles, cloud computing, DevOps y pipelines CI/CD, escalando proyectos complejos con seguridad, rendimiento y eficiencia sostenida. Posee formación en ética de datos, testing, accesibilidad y diseño algorítmico. Ha colaborado con equipos multidisciplinares en entornos exigentes y transformadores, desarrollando soluciones tecnológicas alineadas con objetivos de negocio. Su perfil combina pensamiento crítico, precisión técnica y sensibilidad funcional, consolidándose como un profesional multidisciplinar, resolutivo y orientado al impacto tecnológico sostenible.
+  - <span class="block-title">Full Stack Developer, con conocimientos en Inteligencia Artificial y Ciberseguridad.</span> Técnico con enfoque integral en desarrollo web y tecnologías emergentes, combina experiencia en Front-End y Back-End con visión estratégica en automatización, arquitectura e infraestructura digital. Maneja con fluidez entornos como Angular, React,  Django, Node.js, Python, TypeScrip, JS, Vite y bases SQL/NoSQL, aportando soluciones robustas, intuitivas y seguras. Ha diseñado plataformas aplicando modelos de analítica avanzada, desarrollados con IA en sistemas de gestión. Domina metodologías ágiles,  escalando proyectos  con seguridad, rendimiento y eficiencia sostenida. Posee formación en ética de datos, testing, accesibilidad y diseño algorítmico. Su perfil combina pensamiento crítico, precisión técnica y sensibilidad funcional, consolidándose como un profesional multidisciplinar, resolutivo y orientado al impacto tecnológico sostenible.
       </p>
     </div>
 
   </div>
 </div>
+{% endblock %}
+{% block extra_js %}
+<style>
+  .masthead {
+    min-height: 200px;
+    max-height: 80vh;
+  }
+</style>
 {% endblock %}
