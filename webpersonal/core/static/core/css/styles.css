@@ -485,7 +485,13 @@ footer .copyright {
   .block-title {
     color: #c4a35a;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .block-title2 {
+    color: rgb(14, 14, 14);
+    font-weight: bold;
+    font-size: 1.1rem;
   }
 
   .cv-button {
