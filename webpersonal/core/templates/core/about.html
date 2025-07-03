@@ -6,17 +6,19 @@
 {% block background %}{% load static %}{% static 'core/img/about-bg.png' %}{% endblock %}
 
 {% block headers %}
+<hr>
+<img class="img-fluid avatar" src="{% static 'core/img/foto.png' %}" alt=""
+     style="width: 75px; height: 100px; margin-left: 40px;">
 
-<img class="img-fluid avatar" src="{% static 'core/img/foto.png'%}" alt="" style="width: 75px; height: 100px;">
-<h1>About me</h1>
-<span class="subheading">Biography</span>
+<h2>About me</h2>
+<span class="subheading text-dark">Biography</span>
 {% endblock %}
 
 {% block content %}
 
 <div class="col-lg-12 col-md-12">
-  <h2 class="section-heading">
-    Miguel Meneses.
+  <h2 class="section-heading text-center">
+    Miguel Meneses Oliveros.
     <span class="subheading" style="color: #f0f0eb; font-size: 18px; margin-left: 10px;">
       Nacido el 23 de Noviembre de 1973, en Madrid (España).
     </span>
@@ -34,7 +36,7 @@
     <div class="profile-block">
       <a href="{% url 'cv_fsd' %}" class="cv-button fsd">Ver CV Full Stack Developer</a>
       <p>
-  - <span class="block-title">Full Stack Developer, con conocimientos en Inteligencia Artificial y Ciberseguridad.</span> Técnico con enfoque integral en desarrollo web y tecnologías emergentes, combina experiencia en Front-End y Back-End con visión estratégica en automatización, arquitectura e infraestructura digital. Maneja con fluidez entornos como Angular, React,  Django, Node.js, Python, TypeScrip, JS, Vite y bases SQL/NoSQL, aportando soluciones robustas, intuitivas y seguras. Ha diseñado plataformas aplicando modelos de analítica avanzada, desarrollados con IA en sistemas de gestión. Domina metodologías ágiles,  escalando proyectos  con seguridad, rendimiento y eficiencia sostenida. Posee formación en ética de datos, testing, accesibilidad y diseño algorítmico. Su perfil combina pensamiento crítico, precisión técnica y sensibilidad funcional, consolidándose como un profesional multidisciplinar, resolutivo y orientado al impacto tecnológico sostenible.
+  - <span class="block-title">Full Stack Developer, con conocimientos en Inteligencia Artificial y Ciberseguridad.</span> Técnico con enfoque integral en desarrollo web y tecnologías emergentes, combina experiencia en Front-End y Back-End con visión estratégica en automatización, arquitectura e infraestructura digital. Maneja con fluidez entornos como Angular, React, Django, Node.js, Python, TypeScrip, JS, Vite y bases SQL/NoSQL, aportando soluciones robustas, intuitivas y seguras. Ha diseñado plataformas aplicando modelos de analítica avanzada, desarrollados con IA en sistemas de gestión. Domina metodologías ágiles, escalando proyectos con seguridad, rendimiento y eficiencia sostenida. Posee formación en ética de datos, testing, accesibilidad y diseño algorítmico. Su perfil combina pensamiento crítico, precisión técnica y sensibilidad funcional, consolidándose como un profesional multidisciplinar, resolutivo y orientado al impacto tecnológico sostenible. Sabe integrarse en entornos colaborativos, liderando con pragmatismo y visión integral proyectos de alto valor añadido, con énfasis en calidad, escalabilidad y evolución continua.
       </p>
     </div>
 
