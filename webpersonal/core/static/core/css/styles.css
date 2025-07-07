@@ -486,14 +486,19 @@ footer .copyright {
     color: #c4a35a;
     font-weight: bold;
     font-size: 1.1rem;
+    cursor: pointer;
   }
 
   .block-title2 {
     color: rgb(14, 14, 14);
     font-weight: bold;
     font-size: 1.1rem;
+    position: relative;
+   
   }
-
+  .bandera-cursor {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 3 2"><rect width="3" height="2" fill="%23AA151B"/><rect y="0.6667" width="3" height="0.6667" fill="%23F1BF00"/></svg>') 12 8, auto;
+    }
   .cv-button {
     display: inline-block;
     width: 100%;
