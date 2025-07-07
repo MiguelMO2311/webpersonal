@@ -9,8 +9,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 SECRET_KEY = 'x-h&qoq4&j#u%+h+$84d_rnx!rbpa#40xnemb7z547!!c1a6xu'
 
-DEBUG = True  # Cambiar a False en producción
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+DEBUG = False  # Cambiar a False en producción
+# ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ['MiguelMO.pythonanywhere.com']
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -88,7 +90,7 @@ USE_TZ = True
 # Static files
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "core/static"]
-
+STATIC_ROOT = BASE_DIR / "staticfiles"  # 👉 Añadido para producción (collectstatic)
 # Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
