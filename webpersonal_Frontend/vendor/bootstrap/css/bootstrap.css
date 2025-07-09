@@ -102,12 +102,8 @@
 html {
   font-family: sans-serif;
   line-height: 1.15;
-  text-size-adjust: 100%;
-  /* ✅ propiedad estándar */
   -webkit-text-size-adjust: 100%;
-  /* opcionalmente déjalo para compatibilidad */
   -ms-text-size-adjust: 100%;
-  /* opcionalmente déjalo también */
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
 }
