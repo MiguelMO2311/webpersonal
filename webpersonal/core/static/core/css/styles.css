@@ -769,3 +769,22 @@ footer .copyright {
     line-height: 1.7;
     padding: 20px 0;
   }
+
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        padding-top: 1rem;
+      }
+      .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .nav-item {
+        width: 100%;
+      }
+      .nav-link {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
+    }
