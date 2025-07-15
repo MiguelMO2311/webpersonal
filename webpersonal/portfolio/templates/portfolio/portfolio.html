@@ -31,7 +31,7 @@
     }
   }
 
-  /* NUEVO: mostrar solo hasta 5 líneas y truncar el resto */
+  /* Mostrar solo hasta 5 líneas y truncar el resto */
   .carousel-item .col-md-7 p {
     display: -webkit-box;
     -webkit-line-clamp: 5;
@@ -40,7 +40,7 @@
     text-overflow: ellipsis;
   }
 
-  /* NUEVO: alinear filas verticalmente arriba */
+  /* Alinear filas verticalmente arriba */
   .carousel-item .row {
     align-items: flex-start;
   }
@@ -52,10 +52,10 @@
     <!-- Proyectos - Carrusel Superior -->
     <div class="carousel-section carousel-left bg-bone rounded shadow-sm">
       <h2 class="h4 text-center text-dark">
-        <i class="fa fa-code" style="color: #b89d89;"></i> Proyectos
+        <i class="fas fa-code" style="color: #b89d89;"></i> Proyectos
       </h2>
       <div class="carousel-container">
-        <div id="projectCarousel" class="carousel slide h-100 w-100" data-bs-ride="carousel" data-bs-interval="5000">
+        <div id="projectCarousel" class="carousel slide h-100 w-100" data-bs-ride="carousel" data-bs-interval="10000">
           <div class="carousel-inner h-100">
             {% for project in projects %}
             <div class="carousel-item h-100 {% if forloop.first %}active{% endif %}">
@@ -69,8 +69,8 @@
                   <h5 class="text-primary mb-2">{{ project.title }}</h5>
                   <p class="text-muted mb-2 small">{{ project.description }}</p>
                   {% if project.link %}
-                  <a href="{{ project.link }}" target="_blank" class="btn btn-outline-primary btn-sm">
-                    <i class="fa fa-external-link"></i> Ver Proyecto
+                  <a href="{{ project.link }}" target="_blank" class="btn btn-outline-primary btn-sm" aria-label="Ver proyecto {{ project.title }}">
+                    <i class="fas fa-arrow-up-right-from-square"></i> Ver Proyecto
                   </a>
                   {% endif %}
                   {% if project.technologies %}
@@ -90,10 +90,10 @@
     <!-- Diplomas - Carrusel Inferior -->
     <div class="carousel-section carousel-right bg-leather rounded shadow-sm">
       <h2 class="h4 text-center">
-        <i class="fa fa-graduation-cap" style="color: #fef1e7;"></i> Diplomas y Certificaciones
+        <i class="fas fa-graduation-cap" style="color: #fef1e7;"></i> Diplomas y Certificaciones
       </h2>
       <div class="carousel-container">
-        <div id="diplomaCarousel" class="carousel slide h-100 w-100" data-bs-ride="carousel" data-bs-interval="5000">
+        <div id="diplomaCarousel" class="carousel slide h-100 w-100" data-bs-ride="carousel" data-bs-interval="1000">
           <div class="carousel-inner h-100">
             {% for diploma in diplomas %}
             <div class="carousel-item h-100 {% if forloop.first %}active{% endif %}">
@@ -109,14 +109,14 @@
                   <p class="mb-1 small"><strong>Institución:</strong> {{ diploma.institution }}</p>
                   {% endif %}
                   {% if diploma.date %}
-                  <p class="text-light mb-2 small"><i class="fa fa-calendar"></i> {{ diploma.date }}</p>
+                  <p class="text-light mb-2 small"><i class="fas fa-calendar"></i> {{ diploma.date }}</p>
                   {% endif %}
                   {% if diploma.description %}
                   <p class="small mb-2">{{ diploma.description }}</p>
                   {% endif %}
                   {% if diploma.credential_url %}
-                  <a href="{{ diploma.credential_url }}" target="_blank" class="btn btn-outline-light btn-sm">
-                    <i class="fa fa-certificate"></i> Ver Credencial
+                  <a href="{{ diploma.credential_url }}" target="_blank" class="btn btn-outline-light btn-sm" aria-label="Ver credencial de {{ diploma.title }}">
+                    <i class="fas fa-certificate"></i> Ver Credencial
                   </a>
                   {% endif %}
                 </div>
@@ -140,7 +140,7 @@
 
     if (projectCarousel) {
       new bootstrap.Carousel(projectCarousel, {
-        interval: 10000,
+        interval: 10000, // Proyectos: lento
         ride: 'carousel',
         pause: 'hover',
         wrap: true
@@ -149,22 +149,30 @@
 
     if (diplomaCarousel) {
       new bootstrap.Carousel(diplomaCarousel, {
-        interval: 2000,
+        interval: 1000, // Diplomas: rápido para compensar cantidad
         ride: 'carousel',
         pause: 'hover',
         wrap: true
       });
     }
 
-    // Movimiento sincronizado
+    // Movimiento sincronizado adaptado para compensar diferencias
+    // Hacemos que el de proyectos avance 1 vez cada 10s y el de diplomas 10 veces cada 10s
+    // Por eso el setInterval lo manejamos en pasos de 1000ms, donde el diploma avanza cada paso,
+    // y el proyecto cada 10 pasos.
+
+    let step = 0;
     setInterval(() => {
       const pc = bootstrap.Carousel.getInstance(projectCarousel);
       const dc = bootstrap.Carousel.getInstance(diplomaCarousel);
       if (pc && dc) {
-        pc.prev();
-        dc.next();
+        dc.next(); // Diploma avanza cada 1s
+        if (step % 10 === 0) {
+          pc.next(); // Proyecto avanza cada 10s
+        }
+        step++;
       }
-    }, 5000);
+    }, 1000);
   });
 </script>
 
@@ -174,5 +182,5 @@
     max-height: 50vh;
   }
 </style>
-
+{{ block.super }}
 {% endblock %}

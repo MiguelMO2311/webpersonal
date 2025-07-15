@@ -1,22 +1,36 @@
 {% extends 'core/base.html' %}
 
-{% block title %}Portada{% endblock %}
+{% block title %}
+Portada
+{% endblock %}
 
-{% block background %}{% load static %}{% static 'core/img/home-bg.png' %}{% endblock %}
+{% block background %}
+{% static 'core/img/fondo.jpg' %}
+{% endblock %}
 
 {% block headers %}
-<br>
-<h1 class= >Miguel Meneses</h1>
-<br>
-<span class="subheading" style="color: gold;">Legal Advisor Real Estate</span>
-<br>
-<span class="subheading"style="color: red;">Full Stack Develloper</span>
+<h1>Miguel Meneses</h1>
+<span class="subheading text-bg-success">Legal Advisor · Full Stack Developer</span>
 {% endblock %}
+
+{% block content %}
+<div class="container text-white py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 text-center">
+      <p class="lead">
+        🧪 Esta plantilla extiende <code>core/base.html</code> correctamente.
+      </p>
+      <p>
+        Bienvenido a mi sitio web profesional. Aquí podrás encontrar información sobre mis proyectos, certificaciones y cómo contactarme.
+      </p>
+      <a href="{% url 'portfolio' %}" class="btn btn-outline-light btn-lg mt-3">
+        <i class="fas fa-briefcase"></i> Ver Portafolio
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
 {% block extra_js %}
-<style>
-  .masthead {
-    min-height: 600px;
-    max-height: 90vh;
-  }
-</style>
+{{ block.super }}
 {% endblock %}

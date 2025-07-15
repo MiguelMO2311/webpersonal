@@ -22,8 +22,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webpersonal.core',
-    'portfolio.apps.PortfolioConfig',
+    'core',
+    'portfolio',
 ]
 
 MIDDLEWARE = [
@@ -110,7 +110,7 @@ EMAIL_USE_SSL = False
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "mmeneses73@gmail.com")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "Quejigos2311")
 # EMAIL_HOST_USER = "mmeneses73@gmail.com"
-# EMAIL_HOST_PASSWORD = "Quejigos2307"
+# EMAIL_HOST_PASSWORD = "Quejigos2311"
 
 
 # ✅ Contexto seguro usando certifi
