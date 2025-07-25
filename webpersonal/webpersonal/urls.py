@@ -1,12 +1,11 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from django.conf import settings
-
 from core import views as core_views
 from portfolio import views as portfolio_views
-
 from django.views.static import serve
-from django.conf.urls import url
+
+
 
 urlpatterns = [
     path('', core_views.home, name="home"),
@@ -17,7 +16,7 @@ urlpatterns = [
     path("contact/send_email/", core_views.send_email, name="send_email"),
     path('admin-cv/', core_views.mi_vista_admin_cv, name='cv_admin'),
     path('fsd-cv/', core_views.mi_vista_fsd_cv, name='cv_fsd'),
-    url(r'^favicon\.ico$', serve, {'path': 'static/core/favicon.ico'}),
+    re_path(r'^favicon\.ico$', serve, {'path': 'core/favicon.ico','document_root': settings.STATIC_ROOT,}),
 ]
 
 
