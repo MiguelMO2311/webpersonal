@@ -9,9 +9,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 SECRET_KEY = 'x-h&qoq4&j#u%+h+$84d_rnx!rbpa#40xnemb7z547!!c1a6xu'
 
-DEBUG = True  # Cambiar a False en producción
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
-# ALLOWED_HOSTS = ['MiguelMO.pythonanywhere.com']
+DEBUG = False  # Cambiar a False en producción
+# ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ['MiguelMO.pythonanywhere.com']
 
 
 # Application definition
