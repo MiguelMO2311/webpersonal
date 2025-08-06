@@ -2,13 +2,12 @@ import os
 import ssl
 import certifi
 
-from django.conf import settings
-from django.core.mail import send_mail
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 from portfolio.models import Project, Diploma
-
 
 # Vistas estándar
 def home(request):
@@ -41,7 +40,7 @@ ssl_context = ssl.create_default_context()
 ssl_context.load_verify_locations(certifi.where())
 ssl._create_default_https_context = ssl._create_unverified_context
 
-# Envío de correo
+# Envío de correo con SendGrid
 def send_email(request):
     if request.method == "POST":
         nombre = request.POST.get("nombre")
@@ -51,15 +50,20 @@ def send_email(request):
         asunto = f"Mensaje de {nombre}"
         cuerpo = f"De: {email}\n\n{mensaje}"
 
+        email_obj = Mail(
+            from_email='mmeneses73@gmail.com',  # Verificado en SendGrid
+            to_emails='mmeneses73@gmail.com',
+            subject=asunto,
+            plain_text_content=cuerpo
+        )
+
         try:
-            send_mail(
-                asunto,
-                cuerpo,
-                settings.EMAIL_HOST_USER,
-                ["mmeneses73@gmail.com"],
-                fail_silently=False,
-            )
-            return JsonResponse({"success": True, "message": "Correo enviado correctamente."})
+            sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+            response = sg.send(email_obj)
+            if response.status_code == 202:
+                return JsonResponse({"success": True, "message": "Correo enviado correctamente."})
+            else:
+                return JsonResponse({"success": False, "error": "Error al enviar el correo."}, status=500)
         except Exception as e:
             return JsonResponse({"success": False, "error": str(e)}, status=500)
 
