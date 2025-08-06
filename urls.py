@@ -1,12 +1,10 @@
-# trunk-ignore-all(isort)
 from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 
 from core import views as core_views
 from portfolio import views as portfolio_views
-from core.views import send_email  # noqa: F401
-
+from core.views import home, send_email
 
 
 
