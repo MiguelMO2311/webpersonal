@@ -2,16 +2,18 @@ import os
 from pathlib import Path
 import ssl
 import certifi  # ✅ Para usar certificados raíz verificados
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
-SECRET_KEY = 'x-h&qoq4&j#u%+h+$84d_rnx!rbpa#40xnemb7z547!!c1a6xu'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
-DEBUG = False  # Cambiar a False en producción
-# ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
-ALLOWED_HOSTS = ['MiguelMO.pythonanywhere.com']
+DEBUG = os.getenv("DEBUG", "False").lower() == "true" # Cambiar a False en producción
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split(",")
 
 
 # Application definition
@@ -107,10 +109,10 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
 # Reemplaza estas variables o usa .env
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "mmeneses73@gmail.com")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "Quejigos2311")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 # EMAIL_HOST_USER = "mmeneses73@gmail.com"
-# EMAIL_HOST_PASSWORD = "Quejigos2307"
+# EMAIL_HOST_PASSWORD = "Quejigos2311"
 
 
 # ✅ Contexto seguro usando certifi
