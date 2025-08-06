@@ -2,6 +2,10 @@ from pathlib import Path
 from decouple import config, Csv
 import ssl
 import certifi
+import certifi  # ✅ Para usar certificados raíz verificados
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -11,6 +15,16 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv)
 
 # 📦 Apps
+# Quick-start development settings - unsuitable for production
+SECRET_KEY = os.getenv("SECRET_KEY")
+
+
+DEBUG = os.getenv("DEBUG", "False").lower() == "true" # Cambiar a False en producción
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split(",")
+
+
+
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -94,6 +108,16 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = config("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+
+# Reemplaza estas variables o usa .env
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+# EMAIL_HOST_USER = "mmeneses73@gmail.com"
+# EMAIL_HOST_PASSWORD = "Quejigos2311"
+
+
+# ✅ Contexto seguro usando certifi
+
 EMAIL_SSL_CONTEXT = ssl.create_default_context(cafile=certifi.where())
 
 # 🔧 Clave primaria por defecto
