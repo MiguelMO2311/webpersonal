@@ -554,13 +554,7 @@ footer .copyright {
       width: 0px;
       background: transparent;
     }
-    
-    /* Para Firefox */
-    html {
-      scrollbar-width: none;
-    }
-
-    /* Estilos base para carruseles - Mismo tamaño y sin scroll */
+      /* Estilos base para carruseles - Mismo tamaño y sin scroll */
     .carousel-section {
       height: 45vh; /* Altura fija para ambos carruseles */
       min-height: 300px;

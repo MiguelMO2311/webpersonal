@@ -1,13 +1,14 @@
 from pathlib import Path
 from decouple import config, Csv
 import ssl
-import certifi
-import certifi  # ✅ Para usar certificados raíz verificados
+import certifi# ✅ Para usar certificados raíz verificados
 from dotenv import load_dotenv
+import os
 
-load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv(dotenv_path=BASE_DIR / ".env")
 
 # 🔐 Seguridad
 SECRET_KEY = config('SECRET_KEY')

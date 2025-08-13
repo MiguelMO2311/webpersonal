@@ -1,7 +1,14 @@
 {% extends 'core/base.html' %}
 
 {% block title %}CV Miguel Meneses{% endblock %}
-{% block background %}{% load static %}{% static 'core/img/about-bg.png' %}{% endblock %}
+{% block background %}
+<style>
+  .masthead {
+    background-image: url("{% static 'core/img/about-bg.png' %}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
 {% block headers %}
   <hr>

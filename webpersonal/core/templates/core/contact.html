@@ -2,7 +2,17 @@
 
 {% block title %}Contact{% endblock %}
 
-{% block background %}{% load static %}{% static 'core/img/contact-bg.png' %}{% endblock %}
+{% block background %}
+<style>
+  .masthead {
+    background-image: url("{% static 'core/img/contact-bg.png' %}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+</style>
+{% endblock %}
+
 
 {% block headers %}
 <h1>Contact</h1>

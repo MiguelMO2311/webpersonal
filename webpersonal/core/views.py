@@ -3,7 +3,7 @@ import ssl
 import certifi
 
 from django.http import JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 

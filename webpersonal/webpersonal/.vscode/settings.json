@@ -1,7 +1,0 @@
-{
-    "python.pythonPath": "C:\\Users\\hcost\\.virtualenvs\\CursoDjango--5_pBrm7\\Scripts\\python.exe",
-    "python.linting.pylintEnabled": true,
-    "python.linting.pylintArgs": [
-        "--load-plugins=pylint-django",
-    ],
-}
