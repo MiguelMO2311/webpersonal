@@ -808,3 +808,6 @@ header hr {
   visibility: hidden;
   /* Oculta visualmente sin eliminar el espacio */
 }
+label{
+  color:#a0b5b9
+}
