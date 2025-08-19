@@ -1,0 +1,287 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Tu hoja de estilos -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- Font Awesome para íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title >El Camino Recorrido - Miguel</title>
+    <header>
+ <a href="{% url 'about_camino' %}" class="back-link" title="Volver a la página Sobre mí">
+  <i class="fas fa-arrow-left"></i> Volver a About
+</a>
+</header>
+
+    <style>
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background-color: #E3D9C6;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: goldenrod;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+        p {
+            margin: 15px 0;
+            text-align: justify;
+        }
+        em {
+            font-style: italic;
+        }
+        strong {
+            font-weight: bold;
+        }
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+        .chapter-title {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        .copyright {
+            text-align:end;
+            font-size: 0.9em;
+            color: #8a1313;
+            margin-top: 40px;
+        }
+        .cover-image {
+            width: 100%;
+            max-width: 700px;
+            display: block;
+            margin: auto;
+        }
+    </style>
+<body>
+<img src="{% static 'core/img/portada.jpg' %}" alt="Portada El Camino Recorrido" class="cover-image">
+<h1>El Camino recorrido</h1>
+<p><em>Narrado en primera persona por Miguel Meneses Oliveros</em></p>
+
+<h2>✨ Prólogo</h2>
+<p>No soy escritor ni filósofo, ni tengo grandes respuestas. Pero tengo algo que vale tanto como eso:</p>
+<p>Una VIDA, vivida con los pies en la tierra y el corazón al norte.</p>
+<p>Me llamo Miguel, tengo 51 años, y desde que tengo uso de razón he estado decidiendo —a veces sin saberlo— el camino que seguir. Nací en Madrid, crecí en Leganés, viví veranos con sabor a tierra en Ávila y otros con olor a eucalipto en la Ría de Abres, Lugo. Fui niño en los 80, adolescente en los 90, y adulto en un siglo que corre más de lo que camina. Hoy soy padre, marido, hermano, vecino, amigo...;</p>
+<p>Y este libro no pretende enseñar nada, pero tal vez —como una charla larga al caer la tarde— te haga pensar en tu propio trayecto.</p>
+<p>Porque todos los caminos cuentan. Y cada uno nos va construyendo.</p>
+
+<h2>📑 Índice</h2>
+<ul>
+<li>1. El niño del sur y del norte</li>
+<li>2. Un recreo llamado Leganés</li>
+<li>3. Veranos de tierra y viento</li>
+<li>4. Hermanos, fútbol y jerarquías</li>
+<li>5. Adolescencia y primeras grietas</li>
+<li>6. Cuando el mundo empezó a correr</li>
+<li>7. Vocación vs obligación</li>
+<li>8. El amor y lo que no te cuentan</li>
+<li>9. De padre a padre</li>
+<li>10. El peso (y el regalo) de elegir</li>
+<li>11. La vida que sigue</li>
+<li>12. Epílogo: Leganés, 2025</li>
+</ul>
+
+<h2 class="chapter-title">📖 Capítulo 1: <em>El niño del sur y del norte</em></h2>
+<p>Me llamo Miguel, tengo 51 años y vivo en Leganés, al sur de Madrid. Aunque las casas han cambiado, los adoquines se hayan cubierto de asfalto moderno y los niños ahora jueguen con pantallas, en mi memoria permanece intacta una niñez hecha de calles, barro y sueños sencillos.</p>
+<p>Crecí entre hermanos varones, cuatro en total, lo que hacía de cada día una combinación entre batalla campal y camaradería inquebrantable. Estudié la EGB en el colegio público Lope de Vega, donde aprendimos mucho más que asignaturas: aprendimos códigos de barrio, lealtades improvisadas y cómo pasarnos horas en el recreo jugando a las chapas, la goma, el rescate o el “churro va”. Y claro, merendábamos nuestros bocadillos de chocolate con pan, ese manjar simple que, sinceramente, todavía echo de menos.</p>
+<p>Los veranos eran parte sagrada del calendario. Durante muchos años, los pasábamos en un pequeño pueblo de Ávila (San Juan de la Nava), en la tierra de mi padre. Allí, mi abuelo araba la viña con un arado romano, como lo había hecho su padre y el padre de su padre. No necesitábamos reloj: la luz y el canto de los gallos marcaban las horas. La tierra olía distinto allí, como si aún guardara secretos bajo sus raíces.</p>
+<p>Y cada cinco o seis años más o menos, llegaba el viaje largo, casi una expedición, hacia el norte: la Ría de Abres, en Lugo, donde estaba la aldea de mi madre. Metíamos lo justo y lo innecesario en el coche cargado hasta los topes, como quien se muda en vez de veranear. El motor rugía en los puertos de montaña, y a veces se calentaba subiendo los tramos más duros, obligándonos a parar en alguna cuneta y esperar a que el radiador respirase. Pero no nos importaba. La ilusión de llegar, de ver el mar y los verdes infinitos de Galicia, lo podía todo.</p>
+<p>Viví entre dos mundos: el sur de Madrid, donde el fútbol era religión; y el campo y la aldea, donde el tiempo se estiraba como los veranos. Esa mezcla me formó. Me enseñó que elegir caminos no siempre significa cerrarlos: a veces puedes caminar dos sendas a la vez y llevarte lo mejor de cada una.</p>
+
+<h2 class="chapter-title">📖 Capítulo 2: <em>Un recreo llamado Leganés</em></h2>
+<p>En los años 80, Leganés era una mezcla rara y entrañable entre lo que fue un pueblo y lo que aspiraba a ser una ciudad. Las calles estaban llenas de coches aparcados “al toque (¡dale hasta que haga masa…!)” y aceras repletas de niños gritando, jugando y sobreviviendo a rodillas y codos pelados. Las calles estaban llenas de coches aparcados “al toque (¡dale hasta que haga masa…!)” y aceras repletas de niños gritando, jugando y sobreviviendo a rodillas y codos pelados. Las heridas eran parte del uniforme diario, y las curábamos con alcohol que escocía como si nos arrancaran el alma, agua oxigenada que burbujeaba como si la piel respirara, y mercromina que nos dejaba marcas rojas como medallas de guerra. Con el tiempo, las costras se convertían en nuestras verdaderas rodilleras y coderas: placas ásperas, endurecidas por el sol y el polvo, que protegían las zonas más castigadas. Y lo más emocionante —aunque hoy suene grotesco— era levantar un trozo de costra, con esa mezcla de asco y fascinación, y ver que aún supuraba un poco de pus. Era la prueba de que estábamos vivos, en plena transformación, endureciéndonos a base de caídas y cicatrices. Para nosotros, cada calle era un escenario: un campo de fútbol, un laberinto, una pista de carreras.</p>
+<p>Yo iba al colegio público Lope de Vega. Aquella EGB marcó a toda una generación. No sé si fue por los pupitres de madera verdes (por debajo..., todos con mocos secos pegados), los cuadernos de “Rubio”, las pinturas “Alpino”, los rotuladores “Carioca” o porque, simplemente, era otra forma de aprender la vida. Allí pasé años clave de mi infancia, donde practicabamos cualquier deporte, bailabamos break-dance sobre un trozo de sintasol. En los recreos no necesitábamos móviles ni consolas: jugábamos a 1x2 (con una pelota que hacíamos del envoltorio del bocata de papel plata), al rescate, las chapas, las canicas o el “balón prisionero”. El asfalto se calentaba en verano, y el bocadillo de chocolate era un ritual que saboreábamos con las manos sucias y la sonrisa puesta. A veces tus amigos te pedían un mordisco del bocata y ponías la mano para que no mordiesen más de lo necesario, no fuera que te quitasen medio bocata de un bocado.</p>
+<p>El barrio tenía códigos. Había respeto por los mayores, miedo al portero del edificio (el que lo tuviese) y cariño por los vecinos de toda la vida. Aquel ambiente de tribu urbana me enseñó el valor de la gente que te rodea. Todo el mundo conocía a todo el mundo, y eso te hacía sentir parte de algo, aunque no lo supieras.</p>
+<p>Años después, me di cuenta de que ese Leganés me dio algo mucho más importante que conocimientos: me dio identidad. Me enseñó a compartir, a luchar para ganarte un sitio, a perder sin romperte y tener que conformarte, y a volver a casa antes de que se encendieran las farolas, bueno a veces….</p>
+
+<h2 class="chapter-title">📖 Capítulo 3: <em>Veranos de tierra y viento</em></h2>
+<p>En cuanto se cerraba el colegio y sonaban los primeros calores de junio, mi mente ya estaba en otro sitio: en el
+    campo, en los caminos de polvo, en el olor a uva y en el zumbido de las chicharras, en la poza del gallo. Nos íbamos al pueblo de mi
+    padre, San Juan de la Nava, un municipio pequeño de Ávila, pero con amigos muy grandes, donde parecía que el tiempo se
+    había olvidado de pasar.</p>
+<p>Allí la vida tenía otro ritmo. Mi abuelo, con sus manos curtidas y su andar pausado, araba la tierra con un arado
+    romano que parecía sacado de un museo. Pero era real. Y cada surco que abría, tenía historia. Me fascinaba ver cómo
+    conectaba con la tierra, cómo hablaba poco, pero su mirada decía todo. Esos veranos eran mi lección de humildad
+    anual.</p>
+<p>Jugábamos entre viñas, cogíamos moras, y corríamos tras las gallinas, los gatos y los perros, jugábamos a
+    bote-botero, cazábamos pájaros haciendo “liga” y tirachinas (quemando una suela de zapato), echabamos carreras montados en burros. No había televisión, ni falta que
+    hacía. Aprendí a distinguir el canto del cuco, a inflar ranas y tirarlas a la charca, a no tener prisa y a valorar
+    el sabor de la comida hecha a fuego lento.</p>
+<p>Y luego… cada cinco o seis años, nos esperaba Galicia. El viaje a la aldea de mi madre en Ría de Abres era toda una
+    odisea. El coche cargado hasta los topes —toallas, mantas, bocatas, maletas y algún “por si acaso”— y cuatro
+    hermanos discutiendo. También jugábamos durante el viaje a elegir un color de coche y ganaba el que más coches
+    pasaran de ese color. Había que entretenerse durante ese largo viaje.</p>
+<p>Subíamos los puertos de montaña con el motor echando humo y alguna parada obligatoria con capó abierto y agua al
+    radiador. Pero nadie protestaba. En el fondo, sabíamos que la recompensa llegaría.</p>
+<p>Y llegaba: el olor a salitre, el cielo más bajo, los campos infinitos llenos de caracoles, los hórreos y el pan con sabor a leña, esos
+    mejillones que cogíamos de las rocas. Galicia nos envolvía con su niebla y nos enseñaba el valor de la calma. Allí
+    la vida era introspectiva, más emocional. Aprendí a observar. A no tener que hablar siempre, a salir corriendo de un granero perseguido por mil moscas.</p>
+<p>Aquella playa de “Las Catedrales” que cuando te querías dar cuenta había subido la marea y no podíamos salir a la
+    orilla, y tenían que venir a rescatarnos mi tío y mi padre. Donde la crema Nivea de lata azul redonda, era la única
+    protección solar que nos daban.</p>
+<p>Aquellos veranos —primero en Ávila y luego en Galicia— fueron una brújula que aún me orienta. Aprendí que hay muchas
+    formas de vivir. Y que la sabiduría suele venir del silencio, del barro en los zapatos, de las uñas negras y de los
+    abrazos sin prisas.</p>
+
+<h2 class="chapter-title">📖 Capítulo 4: <em>Hermanos, fútbol y jerarquías</em></h2>
+<p>Tener tres hermanos más,  varones, es crecer con una mezcla constante de camaradería, celos, burlas y protección. Éramos
+    cuatro piezas del mismo puzle, cada una peleando por tener su sitio. No había silencio en casa, ni treguas. Pero
+    tampoco faltaba nunca alguien que te cubriera en el patio del colegio o compartiera su último chicle (por cierto, Bang-Bang o Cheing).</p>
+<p>La relación entre hermanos te enseña pronto que el mundo no gira en torno a ti. Tienes que negociar, renunciar y, a
+    veces, aprender a ganar sin alardear… o perder sin llorar demasiado. Jugábamos al fútbol en la calle, con porterías
+    imaginarias entre farolas y papeleras. El que perdía iba a por el balón. El más pequeño casi siempre era portero por
+    obligación. Las jerarquías eran claras y crudas, como en cualquier manada.</p>
+<p>No solo jugábamos: nos espiábamos, nos delatábamos, nos defendíamos. Aprendimos lo que es la confianza sin
+    condiciones, la traición impulsiva, y ese perdón silencioso que sólo se da entre hermanos. Con los años, ese caos se
+    volvió base: aprendí a observar, a interpretar gestos, a anticipar reacciones… habilidades que más adelante me
+    ayudarían en la vida.</p>
+<p>Cuando ahora veo a mis propios hijos discutir entre ellos, sonrío sin que me vean. Porque sé que, en ese ruido, en
+    esa competencia, hay un amor inexplicable que se convierte en una especie de brújula emocional con los años.</p>
+
+<h2 class="chapter-title">📖 Capítulo 5: <em>Adolescencia y primeras grietas</em></h2>
+<p>La adolescencia llegó como una ventisca: rápida, desordenada y difícil de detener. De pronto lo que antes era
+    sencillo se volvió complejo. Empezaron las preguntas, las contradicciones, el querer pertenecer y destacarse al
+    mismo tiempo. A veces sentía que no encajaba ni en casa ni en el mundo.</p>
+<p>En Leganés, todo estaba cambiando. Aparecieron los primeros ordenadores, los teléfonos fijos con horario para
+    llamadas, y los videoclubs donde podías pasar horas eligiendo una película como si fuera una decisión vital. Mis
+    padres seguían con su rutina, su trabajo, la casa y sus silencios. Y yo empezaba a pensar en cosas nuevas: los estudios, las
+    chicas, el futuro… sin tener ni idea de cómo afrontar nada de eso.</p>
+<p>Fue una época de rebeldía, pero también de primeros compromisos. Tuve que elegir si seguir el camino seguro o
+    explorar lo incierto. Elegí mal algunas veces, como todos. Pero cada error me enseñó algo. Y cada acierto fue una
+    pequeña luz.</p>
+<p>Fue entonces cuando el deporte me salvó. El fútbol ya no era solo juego, era disciplina, desahogo, estructura. Me
+    enseñó lo que significa formar parte de un equipo, tener un objetivo, aguantar la presión.</p>
+<p>La adolescencia fue el primer gran cruce de caminos. Y aunque tomé algunas curvas sin mirar, aprendí que no hay mapa
+    perfecto… solo dirección y voluntad de seguir andando.</p>
+
+<h2 class="chapter-title">📖 Capítulo 6: <em>Cuando el mundo empezó a correr</em></h2>
+<p>A mediados de los 90, algo empezó a cambiar. No fue de golpe, pero sí con ritmo firme. La televisión ya no era el
+    centro de todo. Aparecieron los ordenadores, los móviles que parecían ladrillos y la sensación de que el futuro iba
+    más rápido que nosotros.</p>
+<p>Hasta entonces, el cambio era lento: de un curso a otro, de un barrio a otro, de una estación a otra. Pero de pronto,
+    el mundo empezó a correr. El trabajo se volvió más exigente, los horarios más largos, las decisiones más urgentes.
+    Parecía que, si no te actualizabas, te quedabas atrás.</p>
+<p>Yo lo viví como una presión sorda. Tenía que adaptarme, aprender nuevas herramientas, formas nuevas de comunicar, de
+    trabajar, de incluso soñar. En casa, el cambio también se notaba: los hijos crecían, los gastos aumentaban, el
+    tiempo parecía rendir menos.</p>
+<p>Recuerdo cuando vi por primera vez una conversación en "Messenger", con zumbidos y emoticonos. Me pareció ciencia
+    ficción. Hoy, la inteligencia artificial toma decisiones en segundos. Aquel niño que jugaba con canicas, chapas o
+    peonzas, no lo habría creído.</p>
+<p>Y sin embargo, no reniego del cambio. Solo intento no olvidar de dónde vengo. Porque el mundo puede correr todo lo
+    que quiera… yo prefiero caminar sabiendo por qué.</p>
+
+<h2 class="chapter-title">📖 Capítulo 7: <em>Vocación vs. obligación</em></h2>
+<p>Hay una edad en la que empiezas a distinguir entre lo que te gustaría hacer y lo que tienes que hacer. Entre lo que
+    sueñas… y lo que paga las facturas.</p>
+<p>Yo nunca fui de tener una vocación clara. Había cosas que me gustaban — administrativo, mecánica, las relaciones
+    humanas, los ordenadores— pero ninguna que sintiera como un destino inevitable. Así que, como muchos de mi
+    generación, hice lo que tocaba: trabajar donde había trabajo, cumplir, tirar para adelante.</p>
+<p>Durante años tuve esa sensación de estar encajando donde podía, no donde quería. Y no por falta de valentía, sino
+    porque también hay honor en cumplir, en sostener una familia, en asumir responsabilidades sin drama.</p>
+<p>Ahora, con perspectiva, sé que muchas de esas decisiones que parecían "obligadas" también forjaron parte de mi
+    identidad. Aprendí oficios, conocí a personas que me marcaron, me descubrí resolviendo problemas que nunca imaginé
+    poder afrontar.</p>
+<p>No siempre elegí lo que hice. Pero siempre elegí cómo hacerlo. Y ahí, en esa diferencia, encontré una especie de
+    dignidad tranquila que aún hoy me sostiene.</p>
+<h2 class="chapter-title">📖 Capítulo 8: <em>El amor y lo que no te cuentan</em></h2>
+<p>El día que conocí a mi mujer, recuerdo con claridad la sensación de paz que me dio su presencia. Fue como si todo el ruido bajara un poco de volumen y pudiera escucharme mejor a mí mismo. No fue una
+    historia de película, ni falta que hacía. Fue real, fue gradual, fue sincera.</p>
+<p>Con ella aprendí algo que nadie te explica del amor: que no todo es chispa, ni aventura. Que a veces lo más hermoso
+    es lo estable, lo cotidiano, lo que se construye a pulso con gestos pequeños. Aprendí a escuchar, a ceder, a mirar
+    con otros ojos. Y también aprendí que, en una pareja, el amor es un trabajo mutuo, constante, silencioso.</p>
+<p>Nos casamos sin alardes. Lo hicimos porque sabíamos que juntos éramos mejores. Con el tiempo llegaron los hijos, la
+    casa, las responsabilidades... y también una nueva forma de mirar el mundo. Porque cuando amas de verdad, dejas de
+    pensar solo en ti. Y todo cambia.</p>
+
+<h2 class="chapter-title">📖 Capítulo 9: <em>De padre a padre</em></h2>
+<p>Ser padre no es solo un giro en la historia. Es otra historia entera. Recuerdo cuando nació mi hija. Me temblaban las
+    manos. Me sentí inútil, torpe… y, a la vez, profundamente necesario. Cuando nació mi hijo años después, entendí que
+    el corazón no se divide, se expande.</p>
+<p>Criar a mis hijos ha sido —y sigue siendo— el desafío más hermoso de mi vida. Porque nada te desnuda más que tratar
+    de guiar a alguien sin quitarle el rumbo. Intentar proteger sin asfixiar. Enseñar sin imponer. Hay días en los que
+    sientes que lo haces fatal, y otros en los que una simple sonrisa suya te confirma que vas por buen camino.</p>
+<p>En ellos me veo. En sus gestos, sus dudas, su forma de mirar. Son distintos entre sí, como lo éramos mis hermanos y
+    yo. Pero tienen algo en común: su manera de buscar su lugar en un mundo que ya no se parece nada al que yo conocí.
+</p>
+<p>Ser padre te obliga a replantearlo todo: tus tiempos, tus prioridades, incluso tus miedos. Y aunque no hay manual
+    perfecto, he entendido que el mejor legado no está en las cosas que les dejas… sino en el tipo de persona que les
+    enseñas a ser.</p>
+
+<h2 class="chapter-title">📖 Capítulo 10: <em>El peso (y el regalo) de elegir</em></h2>
+<p>A veces elegimos, y otras veces decidimos no decidir… que, en el fondo, también es una elección. Con los años,
+    entendí que cada cruce de caminos tenía consecuencias, incluso los aparentemente pequeños: aceptar ese trabajo,
+    mantener esa amistad, decir “sí” cuando te morías de miedo, o “no” aunque doliera.</p>
+<p>Hay decisiones que marcan, aunque no lo sepas en el momento. Y lo más curioso es que el paso del tiempo no las borra:
+    las ilumina. Hay caminos que abandoné porque no era el momento. Otros, porque no era yo quien tenía que recorrerlos.
+    Y otros me eligieron a mí antes de que supiera por qué.</p>
+<p>Hoy miro atrás sin arrepentimientos, aunque sí con ciertas nostalgias. No por lo que hice, sino por lo que ya no
+    volverá. Y, aun así, siento que elegí bien. No porque todo saliera perfecto, sino porque viví como creí que debía
+    vivir.</p>
+<p>Elegir es un privilegio. Y asumir lo elegido, un acto de madurez.</p>
+
+<h2 class="chapter-title">📖 Capítulo 11: <em>La vida que sigue</em></h2>
+<p>A mis 51 años, sigo viviendo en Leganés. Ese mismo municipio que me vio correr detrás de un balón, enamorarme por
+    primera vez y criar a mis hijos. Paseo por calles que han cambiado de nombre, pero no de alma. Aún me cruzo con
+    vecinos de toda la vida, aunque ahora las conversaciones duren menos y la gente tenga más prisa.</p>
+<p>Mi hija ya tiene 19 años. Mi hijo, 15. Van encontrando sus propios caminos. A veces los acompaño con una mezcla de
+    orgullo y miedo. Los veo cometer errores y quiero advertirles… pero me contengo. Porque sé que también necesitan
+    equivocarse para crecer.</p>
+<p>La tecnología ha transformado casi todo. Hablo con amigos por videollamada, gestiono pagos desde el móvil, cosas que
+    me habrían parecido brujería en mi infancia. Pero yo sigo creyendo en lo esencial: una buena charla, un paseo largo,
+    el olor del café recién hecho, unas cañas con los amigos y esa risa sin filtro.</p>
+<p>No sé qué me traerán los próximos años, pero sí sé que seguiré caminando. Porque mientras haya algo por aprender, hay
+    camino que andar.</p>
+
+<h2 class="chapter-title">💌 Dedicatorias</h2>
+
+<p>🌹 <strong><em>A mi mujer</em></strong>, por caminar a mi lado sin importar el terreno, incluso cuando el camino se vuelve incierto o cuesta arriba. Por su paciencia que me sostiene, su risa que ilumina los días grises, y ese amor constante que no pide nada a cambio, pero lo da todo. Eres el faro que guía mis pasos y el refugio donde siempre quiero volver.</p>
+
+<p>🌟 <strong><em>A mis hijos</em></strong>, por ser mi mayor enseñanza y mi más grande esperanza. En sus miradas descubro lo esencial, en sus preguntas redescubro el mundo, y en sus sueños entiendo que el futuro merece ser cuidado, imaginado y vivido con valentía. Gracias por recordarme que cada día puede ser el primero de una nueva historia.</p>
+
+<p>🌳 <strong><em>A mis padres</em></strong>, por su ejemplo silencioso y su amor sin alardes. Por cada sacrificio que nunca mencionaron, por cada noche en vela que nunca contaron, y por enseñarme que la verdadera fuerza se transmite en gestos sencillos. Todo lo que soy tiene raíces en su entrega.</p>
+
+<p>🎶 <strong><em>A mis abuelos</em></strong>, por el legado que dejaron sin saberlo, hecho de palabras sabias, abrazos largos y memorias que aún me arropan. Su presencia vive en cada rincón de mi alma, como una melodía que nunca se olvida. Gracias por enseñarme que lo eterno se construye en lo cotidiano.</p>
+
+<p>🤝 <strong><em>A mis hermanos</em></strong>, por ser testigos de mis primeras caídas y cómplices de mis primeras victorias. Por compartir risas, secretos y silencios que solo nosotros entendemos. En cada etapa de mi vida, su presencia ha sido un abrazo que me recuerda que no estoy solo. Somos distintos, sí, pero unidos por un lazo que el tiempo solo fortalece.</p>
+
+<p>🏡 <strong><em>Al resto de familia y amigos</em></strong>, por ser hogar en el recuerdo y apoyo en el presente. Por estar, por quedarse, por sumar. Cada uno de vosotros ha dejado una huella en mi camino, y por eso, esta dedicatoria también les pertenece.</p>
+
+<p>📖 <strong><em>Y a quien lea estas páginas</em></strong>, deseo que encuentres en ellas un reflejo de tus propias emociones, una sonrisa que te abrace o un suspiro que te conecte con lo que alguna vez soñaste. Que estas palabras te acompañen, como lo han hecho todos ellos conmigo.</p>
+
+<h2 class="chapter-title">🪶 Epílogo: <em>Leganés, 2025</em></h2>
+<p>Este libro no es una biografía. Tampoco unas memorias. Es una forma de darle las gracias a la vida por todo lo que me
+    enseñó… y a las decisiones que me formaron. Algunas fáciles, otras dolorosas. Todas mías.</p>
+<p>Ojalá este recorrido sirva a alguien más, aunque sea para mirar con cariño su propio pasado. Para entender que ningún
+    camino es perfecto, pero todos tienen sentido si los recorres con el corazón abierto.</p>
+<p>Hoy, desde mi calle, con la persiana medio bajada y un cuaderno imaginario en la mente, cierro estas páginas sabiendo
+    algo muy simple:</p>
+
+<p><strong>Elegir es vivir. Y vivir, al final, es recordar lo vivido con paz.</strong></p>
+<footer>
+    <p class="copyright">© 2025 Miguel Meneses Oliveros. Todos los derechos reservados.</p>
+</body>
+<footer>
+ <a href="{% url 'about_camino' %}" class="back-link" title="Volver a la página Sobre mí">
+  <i class="fas fa-arrow-left"></i> Volver a About
+  
+</a>
+</footer>
+
+</html>

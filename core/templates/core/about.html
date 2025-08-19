@@ -5,11 +5,16 @@
 
 {% block background %}{% load static %}{% static 'core/img/about-bg.png' %}{% endblock %}
 
+{% load static %}
+
 {% block headers %}
 <span class="subheading text-light pt-5">Biography</span>
 
+<!-- Botón para abrir el libro -->
+<a href="{% url 'camino' %}" target="_blank" class="btn btn-secondary mt-5">
+    Ver libro
+</a>
 {% endblock %}
-
 
 {% block content %}
 
@@ -34,31 +39,6 @@
     <i class="fas fa-play-circle"></i> Ver portfolio juridico/inmobiliario.
   </a>
 </div>
-
-<style>
-.gamma-button {
-  display: inline-block;
-  background-color: goldenrod;
-  color: #fff;
-  font-weight: 500;
-  font-size: 14px;
-  padding: 8px 14px;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 10px rgba(0, 123, 255, 0.25);
-}
-.gamma-button i {
-  margin-right: 6px;
-  font-size: 1.1em;
-}
-.gamma-button:hover {
-  background-color: #0056b3;
-  transform: scale(1.04);
-  box-shadow: 0 5px 14px rgba(0, 86, 179, 0.35);
-}
-</style>
-
     </p>
 
     </div>

@@ -23,7 +23,7 @@
         </div>
 
         <!-- Formulario de contacto -->
-        <form id="formulario-contacto" method="POST">
+        <form id="formulario-contacto" method="POST" action="{% url 'send_email' %}">
             {% csrf_token %}
             <div class="form-group">
                 <label for="nombre">Name and LastName:</label>
@@ -38,36 +38,10 @@
                 <label for="mensaje">Message:</label>
                 <textarea id="mensaje" name="mensaje" class="form-control" rows="5" placeholder="Escribe tu mensaje" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" title="Haz clic aquí para enviar tu mensaje">Send Message</button>
+            <button type="submit" id="btnEnviar" class="btn btn-primary" title="Haz clic aquí para enviar tu mensaje">Send Message</button>
         </form>
     </div>
 </div>
-
-<!-- Script para enviar el formulario con AJAX y manejar la respuesta -->
-<script>
-document.getElementById("formulario-contacto").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita la recarga de la página
-
-    fetch("{% url 'send_email' %}", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: new URLSearchParams(new FormData(this))
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert("✅ Correo enviado correctamente.");
-            this.reset(); // 🔥 Limpia el formulario tras el envío
-        } else {
-            alert("❌ Error: " + data.error);
-        }
-    })
-    .catch(error => console.error("Error:", error));
-});
-</script>
-
 {% endblock %}
 
 {% block extra_js %}

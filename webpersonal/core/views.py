@@ -9,6 +9,7 @@ from sendgrid.helpers.mail import Mail
 
 from portfolio.models import Project, Diploma
 
+
 # Vistas estándar
 def home(request):
     return render(request, "core/home.html")
@@ -33,6 +34,10 @@ def portfolio(request):
         "projects": projects,
         "diplomas": diplomas,
     })
+
+def camino_recorrido(request):
+    return render(request, 'core/el_camino_recorrido.html')
+
 
 # Configuración SSL (desactivación temporal para pruebas)
 os.environ["SSL_CERT_FILE"] = certifi.where()

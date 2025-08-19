@@ -1,12 +1,9 @@
+# trunk-ignore-all(isort)
 import os
-import ssl
-import certifi
-
+from django.shortcuts import render
 from django.http import JsonResponse
-from django.shortcuts import render, redirect
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
-
 from portfolio.models import Project, Diploma
 
 # Vistas estándar
@@ -33,12 +30,17 @@ def portfolio(request):
         "projects": projects,
         "diplomas": diplomas,
     })
+    
+def el_camino_recorrido(request):
+    return render(request, 'core/el_camino_recorrido.html')
 
-# Configuración SSL (desactivación temporal para pruebas)
-os.environ["SSL_CERT_FILE"] = certifi.where()
-ssl_context = ssl.create_default_context()
-ssl_context.load_verify_locations(certifi.where())
-ssl._create_default_https_context = ssl._create_unverified_context
+
+def about_camino(request):
+    return render(request, 'about.html')
+exit()
+
+# Esto está bien si el archivo está en core/templates/about.html
+
 
 # Envío de correo con SendGrid
 def send_email(request):

@@ -111,6 +111,25 @@
   <source src="{% static 'core/audio/inspiration.mp3' %}" type="audio/mpeg">
   Tu navegador no soporta el elemento de audio.
 </audio>
+<!-- Audio persistente -->
+<audio id="musica" autoplay loop>
+  <source src="{% static 'core/audio/Inspiration.mp3' %}" type="audio/mpeg">
+</audio>
+
+<script>
+  const audio = document.getElementById("musica");
+
+  window.addEventListener("beforeunload", () => {
+    localStorage.setItem("audioTime", audio.currentTime);
+  });
+
+  window.addEventListener("load", () => {
+    const savedTime = localStorage.getItem("audioTime");
+    if (savedTime) {
+      audio.currentTime = parseFloat(savedTime);
+    }
+  });
+</script>
 
 </body>
 </html>
