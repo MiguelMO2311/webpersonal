@@ -1,27 +1,15 @@
 from pathlib import Path
 from decouple import config, Csv
 import ssl
-import certifi# ✅ Para usar certificados raíz verificados
-from dotenv import load_dotenv
-import os
-
+import certifi
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv(dotenv_path=BASE_DIR / ".env")
 
 # 🔐 Seguridad
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv)
-
-# 📦 Apps
-# Quick-start development settings - unsuitable for production
-SECRET_KEY = os.getenv("SECRET_KEY")
-
-
-DEBUG = os.getenv("DEBUG", "False").lower() == "true" # Cambiar a False en producción
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split(",")
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 
@@ -109,13 +97,6 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = config("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
-
-# Reemplaza estas variables o usa .env
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
-# EMAIL_HOST_USER = "mmeneses73@gmail.com"
-# EMAIL_HOST_PASSWORD = "Quejigos2311"
-
 
 # ✅ Contexto seguro usando certifi
 

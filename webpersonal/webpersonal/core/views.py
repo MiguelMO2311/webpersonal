@@ -5,8 +5,7 @@ import certifi
 from django.conf import settings
 from django.core.mail import send_mail
 from django.http import JsonResponse
-from django.shortcuts import render, redirect
-
+from django.shortcuts import render
 from portfolio.models import Project, Diploma
 
 
