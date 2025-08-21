@@ -35,9 +35,9 @@ def el_camino_recorrido(request):
     return render(request, 'core/el_camino_recorrido.html')
 
 
-def about_camino(request):
-    return render(request, 'about.html')
-exit()
+# def about_camino(request):
+#     return render(request, 'about.html')
+# exit()
 
 # Esto está bien si el archivo está en core/templates/about.html
 
