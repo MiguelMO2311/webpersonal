@@ -1,0 +1,97 @@
+{% extends 'core/base.html' %}
+
+
+{% block title %}About me{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/about-bg.png' %}{% endblock %}
+
+{% block headers %}
+<div style="position: relative;">
+  <img src="{% static 'core/img/foto.png' %}" alt="Avatar"
+       style="position: absolute;
+              left: -285px;
+              top: -100px;
+              width: 140px;
+              height: 220px;
+              transform: rotate(20deg);
+              border-radius: 12px;
+              z-index: 10;">
+  <hr>
+  <hr>
+  <hr>
+  <span class="subheading text-dark">Biography</span>
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="col-lg-12 col-md-12">
+  <h2 class="section-heading text-center">
+    Miguel Meneses Oliveros.
+    <span class="subheading" style="color: #f0f0eb; font-size: 18px; margin-left: 10px;">
+      Born on November 23, 1973, in Madrid (Spain).
+    </span>
+  </h2>
+
+  <div class="block-container">
+
+    <div class="profile-block">
+      <a href="{% url 'cv_admin' %}" class="cv-button admin" title="Ver CV Administrativo">see Administrative CV</a>
+     <p>
+  - <span class="block-title bandera-cursor" title="Especializado en consultoría jurídica en banca, inmobiliaria y gestión administrativa. Con más de tres décadas de experiencia, ha liderado operaciones legales y financieras en los sectores bancario e inmobiliario, combinando conocimiento técnico y visión estratégica. Su experiencia en gestión administrativa, cumplimiento normativo y protección de datos lo posiciona como líder en entornos regulados. Destaca por su habilidad en la gestión de hipotecas, liquidaciones fiscales, coordinación de firmas notariales y trámites ante registros públicos, así como en la comunicación directa con promotoras, entidades financieras y administraciones públicas. Está formado en análisis financiero, reporting y control documental con herramientas como Excel avanzado, Power BI y bases jurídicas. A lo largo de su carrera, ha implementado soluciones prácticas ante incidencias registrales y asesorado en procesos complejos de regularización patrimonial. Su perfil destaca por la precisión en la gestión, excelencia organizativa y un enfoque resolutivo que aporta garantías y confianza en entornos altamente regulados.">
+    Specialized in Banking, Real Estate, and Administrative Management Legal Consulting.
+  </span> With over three decades of experience, he has led legal and financial operations in the banking and real estate sectors, combining technical knowledge and strategic vision. His expertise in administrative management, regulatory compliance, and data protection positions him as a leader in regulated environments. His outstanding ability to manage mortgage processes, tax settlements, coordination of notary signatures and procedures before public registries, as well as direct communication with developers, financial institutions, and public administrations, is notable. He is trained in financial analysis, reporting, and document control using tools such as advanced Excel, Power BI, and legal bases. Throughout his career, he has implemented practical solutions to registry issues and advised on complex asset regularization processes. His profile stands out for its management precision, organizational excellence, and a decisive approach that provides guarantees and confidence in highly regulated environments.
+    <div style="margin-top: 10px;">
+  <a href="https://miguel-meneses-oliveros--0vlrbta.gamma.site/" target="_blank" class="gamma-button" title="Ver presentación interactiva en Gamma">
+    <i class="fas fa-play-circle"></i> Ver portfolio juridico/inmobiliario.
+  </a>
+</div>
+
+<style>
+.gamma-button {
+  display: inline-block;
+  background-color: goldenrod;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 123, 255, 0.25);
+}
+.gamma-button i {
+  margin-right: 6px;
+  font-size: 1.1em;
+}
+.gamma-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.04);
+  box-shadow: 0 5px 14px rgba(0, 86, 179, 0.35);
+}
+</style>
+
+    </p>
+
+    </div>
+
+    <div class="profile-block">
+      <a href="{% url 'cv_fsd' %}" class="cv-button fsd"title="Ver CV Desarrollador Full Stack">See Full Stack Developer CV</a>
+     <p title="">
+  - <span class="block-title2 bandera-cursor" title="Desarrollador Full Stack con conocimientos en Inteligencia Artificial y Ciberseguridad. Técnico con un enfoque integral en desarrollo web y tecnologías emergentes, combina experiencia en front-end y back-end con una visión estratégica en automatización, arquitectura e infraestructura digital. Domina entornos como Angular, React, Django, Node.js, Python, TypeScript, JS, Vite y bases de datos SQL/NoSQL, ofreciendo soluciones robustas, intuitivas y seguras. Ha diseñado plataformas aplicando modelos de analítica avanzada, desarrollados con IA en sistemas de gestión. Domina las metodologías ágiles, escalando proyectos con seguridad, rendimiento y eficiencia sostenibles. Cuenta con formación en ética de datos, testing, accesibilidad y diseño algorítmico. Su perfil combina pensamiento crítico, precisión técnica y sensibilidad funcional, lo que lo consolida como un profesional multidisciplinar, resolutivo y enfocado en el impacto tecnológico sostenible. Sabe integrarse en entornos colaborativos, liderando proyectos de alto valor añadido con pragmatismo y una visión integral, con énfasis en la calidad, la escalabilidad y la evolución continua.">
+    Full Stack Developer, with knowledge in Artificial Intelligence and Cybersecurity.
+  </span> A technician with a comprehensive focus on web development and emerging technologies, he combines experience in front-end and back-end with a strategic vision in automation, architecture, and digital infrastructure. He is fluent in environments such as Angular, React, Django, Node.js, Python, TypeScript, JS, Vite, and SQL/NoSQL databases, providing robust, intuitive, and secure solutions. He has designed platforms applying advanced analytics models, developed with AI in management systems. He masters agile methodologies, scaling projects with sustained security, performance, and efficiency. He has training in data ethics, testing, accessibility, and algorithmic design. His profile combines critical thinking, technical precision, and functional sensitivity, consolidating him as a multidisciplinary, decisive professional focused on sustainable technological impact. He knows how to integrate into collaborative environments, leading high-added value projects with pragmatism and a comprehensive vision, with an emphasis on quality, scalability, and continuous evolution.
+  </p>
+  </div>
+  </div>
+</div>
+{% endblock %}
+{% block extra_js %}
+<style>
+  .masthead {
+    min-height: 200px;
+    max-height: 80vh;
+  }
+</style>
+{% endblock %}
