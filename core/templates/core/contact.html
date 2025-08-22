@@ -5,42 +5,44 @@
 {% block background %}{% load static %}{% static 'core/img/contact-bg.png' %}{% endblock %}
 
 {% block headers %}
-<h1>Contact</h1>
-<br>
-<span class="subheading">Consulting</span>
+  <h1>Contact</h1>
+  <br>
+  <span class="subheading">Consulting</span>
 {% endblock %}
 
 {% block content %}
 <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="contacto-miguel">
-            <p>
-              “Si necesitas asesoramiento en el sector inmobiliario, financiero o tecnológico, estaré encantado de ayudarte. Con una trayectoria consolidada en el ámbito jurídico y un enfoque innovador en el desarrollo tecnológico, ofrezco soluciones estratégicas adaptadas a tus objetivos. No dudes en ponerte en contacto para explorar oportunidades, mejorar procesos y dar forma a nuevos proyectos con confianza y visión profesional.”
-            </p>
-            <br>
-            <p><strong>Teléfono:</strong> +34 614 21 85 65</p>
-            <p><strong>Email:</strong> mmeneses73@gmail.com</p>
-        </div>
-
-        <!-- Formulario de contacto -->
-        <form id="formulario-contacto" method="POST" action="{% url 'send_email' %}">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="nombre">Name and LastName:</label>
-                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Introduce tu nombre y apellidos" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="Introduce tu dirección de correo electrónico" required>
-            </div>
-
-            <div class="form-group">
-                <label for="mensaje">Message:</label>
-                <textarea id="mensaje" name="mensaje" class="form-control" rows="5" placeholder="Escribe tu mensaje" required></textarea>
-            </div>
-            <button type="submit" id="btnEnviar" class="btn btn-primary" title="Haz clic aquí para enviar tu mensaje">Send Message</button>
-        </form>
+  <div class="col-lg-8 col-md-10 mx-auto">
+    <div class="contacto-miguel">
+      <p>
+        “Si necesitas asesoramiento en el sector inmobiliario, financiero o tecnológico, estaré encantado de ayudarte. Con una trayectoria consolidada en el ámbito jurídico y un enfoque innovador en el desarrollo tecnológico, ofrezco soluciones estratégicas adaptadas a tus objetivos. No dudes en ponerte en contacto para explorar oportunidades, mejorar procesos y dar forma a nuevos proyectos con confianza y visión profesional.”
+      </p>
+      <br>
+      <p><strong>Teléfono:</strong> +34 614 21 85 65</p>
+      <p><strong>Email:</strong> mmeneses73@gmail.com</p>
     </div>
+
+    <!-- Formulario de contacto -->
+    <form id="formulario-contacto" method="POST" action="{% url 'send_email' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="nombre">Name and LastName:</label>
+        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Introduce tu nombre y apellidos" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Introduce tu dirección de correo electrónico" required>
+      </div>
+      <div class="form-group">
+        <label for="mensaje">Message:</label>
+        <textarea id="mensaje" name="mensaje" class="form-control" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+      </div>
+      <button type="submit" id="btnEnviar" class="btn btn-primary">Send Message</button>
+    </form>
+
+    <!-- Resultado del envío -->
+    <div id="mensaje-resultado" class="mt-3"></div>
+  </div>
 </div>
 {% endblock %}
 
@@ -51,4 +53,33 @@
     max-height: 90vh;
   }
 </style>
+
+<script>
+document.getElementById("formulario-contacto").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+
+  fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: {
+      "X-CSRFToken": data.get("csrfmiddlewaretoken")
+    }
+  })
+  .then(response => response.json())
+  .then(result => {
+    const mensaje = document.getElementById("mensaje-resultado");
+    if (result.success) {
+      mensaje.innerHTML = "<div class='alert alert-success'>Mensaje enviado correctamente.</div>";
+      form.reset();
+    } else {
+      mensaje.innerHTML = `<div class='alert alert-danger'>${result.error}</div>`;
+    }
+  })
+  .catch(error => {
+    document.getElementById("mensaje-resultado").innerHTML = "<div class='alert alert-danger'>Error inesperado al enviar el mensaje.</div>";
+  });
+});
+</script>
 {% endblock %}

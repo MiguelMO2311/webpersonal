@@ -2,8 +2,12 @@ from pathlib import Path
 from decouple import config, Csv
 import ssl
 import certifi
+from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+SENDGRID_API_KEY = config('SENDGRID_API_KEY')
 
 
 # 🔐 Seguridad
