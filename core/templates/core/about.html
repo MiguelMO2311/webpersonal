@@ -8,13 +8,13 @@
 {% load static %}
 
 {% block headers %}
-<span class="subheading text-light pt-5">Biography</span>
-
-<!-- Botón para abrir el libro -->
-<a href="{% url 'camino' %}" target="_blank" class="btn btn-secondary mt-5">
-    Ver libro
-</a>
+<div style="margin-top: 170px; text-align: right;">
+    <a href="{% url 'camino' %}" title='"Leer libro..."' class="subheading text-light">
+        Biography
+    </a>
+</div>
 {% endblock %}
+
 
 {% block content %}
 
