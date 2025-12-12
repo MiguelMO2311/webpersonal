@@ -919,10 +919,13 @@ label {
   color: #8f6b2c;
 }
 
-
 /* Fuerza la animación por id, máxima especificidad */
 #logoPionero {
-  animation: blink 1s infinite !important;
+  animation: blink 2s infinite !important;
+  transition: transform 0.3s ease;
+  /* transición suave para el escalado */
+  border-radius: 5%;
+    /* redondea las esquinas */
 }
 
 @keyframes blink {
@@ -937,6 +940,16 @@ label {
   100% {
     opacity: 1;
   }
+}
+
+/* Al pasar el ratón encima */
+#logoPionero:hover {
+  animation: none !important;
+  /* detiene la animación del todo */
+  transform: scale(2);
+  /* amplía al doble */
+  opacity: 1;
+  /* asegura que se vea completo */
 }
 
 /* Ocultar en pantallas pequeñas (ej. móviles) */
