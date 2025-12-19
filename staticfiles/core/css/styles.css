@@ -538,6 +538,7 @@ footer .copyright {
   background: #444;
   color: white;
 }
+
 .gamma-button {
   display: inline-block;
   background-color: goldenrod;
@@ -816,10 +817,12 @@ body {
   line-height: 1.7;
   padding: 20px 0;
 }
+
 /* Formulario de contacto: labels en blanco */
 #formulario-contacto label {
   color: rgb(195, 211, 236);
 }
+
 /* Oculta los hr en el header pero mantiene el espacio */
 header hr {
   border: none;
@@ -831,9 +834,11 @@ header hr {
   visibility: hidden;
   /* Oculta visualmente sin eliminar el espacio */
 }
-label{
-  color:#a0b5b9
+
+label {
+  color: #a0b5b9
 }
+
 .navbar-brand img {
   transition: box-shadow 0.3s ease;
 }
@@ -855,6 +860,7 @@ label{
     opacity: 0.5;
   }
 }
+
 #mensajeEnviado {
   animation: aparecer 0.6s ease-out;
 }
@@ -870,6 +876,7 @@ label{
     opacity: 1;
   }
 }
+
 .btn {
   padding: 10px 20px;
   color: rgb(143, 143, 148);
@@ -880,15 +887,18 @@ label{
 .btn:hover {
   background-color: #0056b3;
 }
+
 .masthead .container a.btn {
   position: relative;
   z-index: 10;
   /* debe ser mayor que el overlay */
 }
+
 .masthead .overlay {
   pointer-events: none;
   /* permite que los clics pasen a los elementos debajo */
 }
+
 /* El Camino recorrido html */
 .back-link {
   display: inline-block;
@@ -909,4 +919,42 @@ label{
   color: #8f6b2c;
 }
 
+/* Fuerza la animación por id, máxima especificidad */
+#logoPionero {
+  animation: blink 2s infinite !important;
+  transition: transform 0.3s ease;
+  /* transición suave para el escalado */
+  border-radius: 5%;
+    /* redondea las esquinas */
+}
 
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Al pasar el ratón encima */
+#logoPionero:hover {
+  animation: none !important;
+  /* detiene la animación del todo */
+  transform: scale(2);
+  /* amplía al doble */
+  opacity: 1;
+  /* asegura que se vea completo */
+}
+
+/* Ocultar en pantallas pequeñas (ej. móviles) */
+@media (max-width: 768px) {
+  #logoPionero {
+    display: none;
+  }
+}
