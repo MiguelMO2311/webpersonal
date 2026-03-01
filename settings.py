@@ -12,7 +12,7 @@ SENDGRID_API_KEY = config('SENDGRID_API_KEY')
 # 🔐 Seguridad
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # 📦 Apps
 INSTALLED_APPS = [
@@ -37,7 +37,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'webpersonal.urls'
+ROOT_URLCONF = 'urls'
 
 # 🧠 Templates
 TEMPLATES = [
@@ -56,7 +56,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'webpersonal.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 # 🗄️ Base de datos
 DATABASES = {
@@ -83,9 +83,7 @@ USE_TZ = True
 
 # 📁 Archivos estáticos
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "core/static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
 # 📁 Archivos multimedia
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
